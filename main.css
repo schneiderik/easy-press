@@ -1,0 +1,9 @@
+h1 {
+  font-size: 200px;
+}
+
+#under-construction {
+  text-align: center;
+  margin: 200px auto 0;
+  font-family: 'monospace', courier;
+}

@@ -1,4 +1,4 @@
-var hey = 'Hey World';
+var hey = 'Sup World';
 var div = document.createElement('div');
 
 div.textContent = hey;

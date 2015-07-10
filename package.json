@@ -1,0 +1,46 @@
+{
+  "name": "easy-press",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:schneiderik/easy-press.git"
+  },
+  "main": "./app.js",
+  "scripts": {
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "browserify ./assets/js/main.js -t babelify -o ./dist/js/main.js -s EasyApp",
+    "build:css": "node-sass ./assets/css/main.scss --output ./dist/css",
+    "lint": "npm run lint:app && npm run lint:assets",
+    "lint:assets": "eslint ./assets/js",
+    "lint:app": "eslint ./app.js ./lib",
+    "prebuild:js": "npm run lint:assets",
+    "prestart": "npm run build && npm run lint:app",
+    "pretest": "npm run lint",
+    "start": "npm run watch",
+    "test": "./node_modules/karma/bin/karma start config/karma.js --single-run",
+    "watch": "npm run watch:js && npm run watch:css",
+    "watch:js": "onchange './assets/js/**/*' -- npm run build:js",
+    "watch:css": "onchange './assets/css/**/*' -- npm run build:css"
+  },
+  "devDependencies": {
+    "babel-eslint": "^3.1.23",
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.4",
+    "chai": "^3.0.0",
+    "eslint": "^0.24.1",
+    "karma": "^0.12.37",
+    "karma-browserify": "^4.2.1",
+    "karma-es5-shim": "0.0.4",
+    "karma-mocha": "^0.2.0",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "mocha": "^2.2.5",
+    "node-sass": "^3.2.0",
+    "onchange": "^1.1.0",
+    "phantomjs": "^1.9.17",
+    "sinon": "^1.15.4",
+    "sinon-chai": "^2.8.0"
+  },
+  "dependencies": {
+    "express": "^4.13.1"
+  }
+}

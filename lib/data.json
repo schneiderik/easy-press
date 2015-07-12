@@ -1,0 +1,25 @@
+{
+  "products": [
+    {   
+      "name": "Nordhouse",
+      "author": "Erik Schneider",
+      "price": 500,
+      "shipping": 300,
+      "addon_shipping": 100
+    },
+    {   
+      "name": "To-Do",
+      "author": "Erik Schneider",
+      "price": 300,
+      "shipping": 200,
+      "addon_shipping": 50
+    },
+    {   
+      "name": "Sand Dune",
+      "author": "Erik Schneider",
+      "price": 1000,
+      "shipping": 300,
+      "addon_shipping": 100
+    }
+  ]
+}

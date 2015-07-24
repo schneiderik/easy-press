@@ -1,0 +1,9 @@
+<article class="cart-item">
+  <div class="cart-item__title">{{title}}</div>
+  <div class="cart-item__quantity-changer">
+    <a class="cart-item__decrease-quantity">-</a>
+    <span class="cart-item__quantity">{{quantity}}</span>
+    <a class="cart-item__decrease-quantity">+</a>
+  </div>
+  <div class="cart-item__price">{{toPrice(multiply(price, quantity))}}</div>
+</article>

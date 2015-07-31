@@ -1,21 +1,26 @@
-<section id="cart">
-  <div class="cart__summary">
-    <span class="cart__total-quantity">({{totalQuantity}})</span>
-    <span class="cart__total-price">{{toPrice totalPrice}}</span>
-  </div>
-  <div class="cart__details"> 
-    <div class="cart__items">
-      {{#each cartItems}}
-        {{>cart-item this}}
-      {{/each}}
-    </div>
-    <div class="cart__totals">
-      <span class="cart__total-shipping-price">({{toPrice totalShippingPrice}})</span>
-      <span class="cart__total-price">{{toPrice totalPrice}}</span>
-    </div>
-    <div class="cart__actions">
-      <a class="cart__cancel">Cancel</a>
-      <button class="cart__checkout">Checkout</button>
-    </div>
-  </div>
-</section>
+{{#if cart}}
+  {{#ifNotEmpty cartItems}}
+    <section id="cart">
+      <div class="cart__summary">
+        <span class="cart__total-quantity">({{totalQuantity}})</span>
+        <span class="cart__total-price">{{toPrice totalPrice}}</span>
+      </div>
+      <div class="cart__details"> 
+        <div class="cart__items">
+          {{#each cartItems}}
+            {{>cart-item this}}
+          {{/each}}
+        </div>
+        <div class="cart__totals">
+          <span class="cart__total-shipping-price">({{toPrice totalShippingPrice}})</span>
+          <span class="cart__total-item-price">{{toPrice totalItemPrice}}</span>
+          <span class="cart__total-price">{{toPrice totalPrice}}</span>
+        </div>
+        <div class="cart__actions">
+          <a class="cart__cancel">Cancel</a>
+          <button class="cart__checkout">Checkout</button>
+        </div>
+      </div>
+    </section>
+  {{/ifNotEmpty}}
+{{/if}}

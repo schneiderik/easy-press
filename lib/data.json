@@ -1,6 +1,6 @@
 {
   "products": [
-    {   
+    {
       "name": "Whitey's Woods",
       "slug": "whiteys-woods",
       "author": "Erik Schneider",
@@ -16,7 +16,7 @@
         "/dist/images/whiteys-woods/detail3.png"
       ]
     },
-    {   
+    {
       "name": "Nothing Special",
       "slug": "nothing-special",
       "author": "Lane Fujita",
@@ -25,7 +25,7 @@
       "addonShipping": 100,
       "quantity": 0
     },
-    {   
+    {
       "name": "Handout Comics No. 4",
       "slug": "handout-comics-no-4",
       "author": "Various Artists",
@@ -34,7 +34,7 @@
       "addonShipping": 100,
       "quantity": 0
     },
-    {   
+    {
       "name": "Nordhouse",
       "slug": "nordhouse",
       "author": "Erik Schneider",
@@ -43,7 +43,7 @@
       "addonShipping": 100,
       "quantity": 50
     },
-    {   
+    {
       "name": "To-Do",
       "slug": "to-do",
       "author": "Erik Schneider",
@@ -52,7 +52,7 @@
       "addonShipping": 50,
       "quantity": 50
     },
-    {   
+    {
       "name": "Sand Dune",
       "slug": "sand-dune",
       "author": "Erik Schneider",
@@ -63,14 +63,16 @@
     }
   ],
   "cart": {
-    "totalPrice": 1600,
+    "totalPrice": 2100,
+    "totalItemPrice": 1600,
     "totalShippingPrice": 500,
     "totalQuantity": 4,
     "cartItems": [
       {
         "title": "Whitey's Woods",
-        "price": 400,
-        "quantity": 4
+        "unitPrice": 400,
+        "quantity": 4,
+        "price": 1600
       }
     ]
   }

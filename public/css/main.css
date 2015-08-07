@@ -1,20 +1,16 @@
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body {
-  font-size: 137%;
-}
+  font-size: 137%; }
 
 #main-section {
   margin: auto;
   max-width: 768px;
-  width: 90%;
-}
+  width: 90%; }
 
 .projects {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-}
+  align-items: center; }

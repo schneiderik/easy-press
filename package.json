@@ -8,8 +8,8 @@
   "main": "./app.js",
   "scripts": {
     "build": "npm run build:js && npm run build:css",
-    "build:js": "npm run lint:assets && browserify ./assets/js/main.js -t babelify -o ./dist/js/main.js -s EasyApp",
-    "build:css": "node-sass ./assets/css/main.scss --output ./dist/css",
+    "build:js": "npm run lint:assets && browserify ./assets/js/main.js -t babelify -o ./public/js/main.js -s EasyApp",
+    "build:css": "node-sass ./assets/css/main.scss --output ./public/css",
     "lint": "npm run lint:app && npm run lint:assets",
     "lint:assets": "eslint ./assets/js",
     "lint:app": "eslint $npm_package_main ./lib",

@@ -13,6 +13,7 @@ app.engine('handlebars', expressHandlebars({
 
 app.set('view engine', 'handlebars');
 
+app.use(express.static('public'));
 app.use(cookieParser());
 
 app.get('/', function (req, res) {

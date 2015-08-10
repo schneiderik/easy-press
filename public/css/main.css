@@ -1,16 +1,32 @@
+@import url(./reset.css);
 * {
   box-sizing: border-box; }
 
 body {
   font-size: 137%; }
 
-#main-section {
+#main-header {
   margin: auto;
-  max-width: 768px;
+  max-width: 960px;
   width: 90%; }
 
-.projects {
+#main-section {
+  margin: auto;
+  max-width: 960px;
+  width: 90%; }
+
+#products {
+  margin: 0 -1rem;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center; }
+
+.product {
+  padding: 1rem;
+  flex-grow: 1;
+  flex-basis: 320px; }
+  .product .product__cover-photo {
+    background-color: #646464;
+    width: 100%; }

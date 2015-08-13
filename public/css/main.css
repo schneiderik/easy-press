@@ -17,12 +17,12 @@ body {
 
 a {
   text-decoration: none;
-  color: #999;
-  border-bottom: 2px solid #999;
+  color: #000;
+  border-bottom: 2px solid #000;
   word-spacing: 0.3rem; }
   a:hover {
-    color: #444;
-    border-bottom: 2px solid #444; }
+    color: #999;
+    border-bottom: 2px solid #999; }
 
 #main-header {
   margin: 2rem auto 1rem;
@@ -106,6 +106,4 @@ a {
 .main-footer {
   margin-top: 2rem;
   text-align: center;
-  font-size: 1.3rem;
-  letter-spacing: 0.03rem;
   word-spacing: 0.3rem; }

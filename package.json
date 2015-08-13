@@ -17,7 +17,6 @@
     "lint:assets": "eslint ./assets/js",
     "lint:app": "eslint $npm_package_main ./lib",
     "prestart": "npm run build && npm run lint:app",
-    "prestart-prod": "npm run prestart",
     "start": "npm run watch & node $npm_package_main",
     "start-prod": "node $npm_package_main",
     "test": "npm run lint && ./node_modules/karma/bin/karma start config/karma.js --single-run",

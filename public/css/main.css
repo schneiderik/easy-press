@@ -1,22 +1,58 @@
-@import url(./reset.css);
+@charset "UTF-8";
+@font-face {
+  font-family: 'bebas';
+  src: url("/fonts/bebas.eot");
+  src: url("/fonts/bebas.eot?#iefix") format("embedded-opentype"), url("/fonts/bebas.woff") format("woff"), url("/fonts/bebas.ttf") format("truetype"), url("/fonts/bebas.svg#bebas") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 * {
   box-sizing: border-box; }
 
 body {
-  font-size: 137%; }
+  background-color: #FFFFF0;
+  font-size: 16px;
+  font-family: 'bebas', 'helvetica neue', helvetica, sans-serif;
+  margin-bottom: 3rem; }
+
+a {
+  text-decoration: none;
+  color: #999;
+  border-bottom: 2px solid #999;
+  word-spacing: 0.3rem; }
+  a:hover {
+    color: #444;
+    border-bottom: 2px solid #444; }
 
 #main-header {
-  margin: auto;
+  margin: 2rem auto 1rem;
   max-width: 960px;
+  text-align: center;
   width: 90%; }
+  #main-header .main-header__title {
+    font-size: 4rem;
+    letter-spacing: 0.17rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    word-spacing: 0.5rem; }
+  #main-header .main-header__slogan {
+    font-size: 1.3rem;
+    letter-spacing: 0.03rem;
+    word-spacing: 0.3rem; }
 
 #main-section {
   margin: auto;
   max-width: 960px;
+  text-align: center;
   width: 90%; }
 
-#products {
-  margin: 0 -1rem;
+.riso {
+  margin: 0 auto;
+  max-width: 420px;
+  position: relative;
+  left: 1.5%; }
+
+.products {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -24,9 +60,52 @@ body {
   align-items: center; }
 
 .product {
-  padding: 1rem;
   flex-grow: 1;
   flex-basis: 320px; }
   .product .product__cover-photo {
     background-color: #646464;
     width: 100%; }
+
+.coming-soon {
+  padding: 0.5rem 0 1.5rem;
+  word-spacing: 0.2rem; }
+  .coming-soon:before,
+  .coming-soon:after {
+    content: " — "; }
+
+.token {
+  background: black;
+  text-align: center;
+  color: #FFFFF0;
+  padding: 1.5rem 0 2em; }
+  .token .token__intro {
+    display: inline-block;
+    margin: 0 0 1rem;
+    border: 2px solid #FFFFF0;
+    padding: 0.2rem 0.6rem;
+    word-spacing: 0.2rem; }
+  .token .token__title {
+    font-size: 3rem;
+    letter-spacing: 0.17rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    word-spacing: 0.5rem; }
+  .token .token__description {
+    font-size: 1.3rem;
+    letter-spacing: 0.03rem;
+    word-spacing: 0.3rem; }
+  .token .token__nav {
+    padding-top: 1rem; }
+    .token .token__nav a {
+      color: #FFFFF0;
+      border-color: #FFFFF0; }
+      .token .token__nav a:hover {
+        color: #e2e2a7;
+        border-bottom: 2px solid #e2e2a7; }
+
+.main-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.3rem;
+  letter-spacing: 0.03rem;
+  word-spacing: 0.3rem; }

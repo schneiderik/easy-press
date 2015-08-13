@@ -3,14 +3,32 @@
 <head>
   <meta charset="utf-8">
   <title>{{title}}</title>
+  <link rel="stylesheet" type="text/css"  href="/css/reset.css">
   <link rel="stylesheet" type="text/css"  href="/css/main.css">
 </head>
 <body>
+<div class="token">
+  <div class="token__intro" data-misprint="word">Easy Press is proud to present:</div>
+  <div class="token__title" data-misprint="char">Token</div>
+  <div class="token__description" data-misprint="word">
+     A night of local zines, music, and video games at Emporium Logan Square.
+  </div>
+  <nav class="token__nav">
+    <a href="#" data-misprint="word">Checkout the Event on Facebook</a>
+  </nav>
+</div>
+
   {{> header}}
 
   <section id="main-section">
     {{{body}}}
   </section>
 
+  {{> footer}}
+
+  <script src="/js/main.js"></script>
+  <script>
+    new EasyApp.Misprint();
+  </script>
 </body>
 </html>

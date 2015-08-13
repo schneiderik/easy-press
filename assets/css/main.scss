@@ -1,23 +1,70 @@
-@import url(./reset.css);
+@font-face {
+  font-family: 'bebas';
+  src: url('/fonts/bebas.eot');
+  src: url('/fonts/bebas.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/bebas.woff') format('woff'),
+    url('/fonts/bebas.ttf') format('truetype'),
+    url('/fonts/bebas.svg#bebas') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-size: 137%;
+  background-color: #FFFFF0;
+  font-size: 16px;
+  font-family: 'bebas', 'helvetica neue', helvetica, sans-serif;
+  margin-bottom: 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: #999;
+  border-bottom: 2px solid #999;
+  word-spacing: 0.3rem;
+
+  &:hover {
+    color: #444;
+    border-bottom: 2px solid #444;
+  }
 }
 
 #main-header {
-  margin: auto;
+  margin: 2rem auto 1rem;
   max-width: 960px;
+  text-align: center;
   width: 90%;
+
+  .main-header__title {
+    font-size: 4rem;
+    letter-spacing: 0.17rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    word-spacing: 0.5rem;
+  }
+
+  .main-header__slogan {
+    font-size: 1.3rem;
+    letter-spacing: 0.03rem;
+    word-spacing: 0.3rem;
+  }
 }
 
 #main-section {
   margin: auto;
   max-width: 960px;
+  text-align: center;
   width: 90%;
+}
+
+.riso {
+  margin: 0 auto;
+  max-width: 420px;
+  position: relative;
+  left: 1.5%;
 }
 
 .products {
@@ -36,4 +83,64 @@ body {
     background-color: rgba(100, 100, 100, 1);
     width: 100%;
   }
+}
+
+.coming-soon {
+  padding: 0.5rem 0 1.5rem;
+  word-spacing: 0.2rem;
+
+  &:before,
+  &:after {
+    content: " — ";
+  }
+}
+
+.token {
+  background: black;
+  text-align: center;
+  color: #FFFFF0;
+  padding: 1.5rem 0 2em;
+
+  .token__intro {
+    display: inline-block;
+    margin: 0 0 1rem;
+    border: 2px solid #FFFFF0;
+    padding: 0.2rem 0.6rem;
+    word-spacing: 0.2rem;
+  }
+
+  .token__title {
+    font-size: 3rem;
+    letter-spacing: 0.17rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    word-spacing: 0.5rem;
+  }
+
+  .token__description {
+    font-size: 1.3rem;
+    letter-spacing: 0.03rem;
+    word-spacing: 0.3rem;
+  }
+
+  .token__nav {
+    padding-top: 1rem;
+    a {
+      color: #FFFFF0;
+      border-color: #FFFFF0;
+
+      &:hover {
+        color: desaturate(darken(#FFFFF0, 20%), 50%);
+        border-bottom: 2px solid desaturate(darken(#FFFFF0, 20%), 50%);
+      }
+    }
+  }
+}
+
+.main-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1.3rem;
+  letter-spacing: 0.03rem;
+  word-spacing: 0.3rem;
 }

@@ -16,6 +16,7 @@
 body {
   background-color: #FFFFF0;
   font-size: 16px;
+  line-height: 1.618;
   font-family: 'bebas', 'helvetica neue', helvetica, sans-serif;
   margin-bottom: 3rem;
 }
@@ -34,6 +35,7 @@ a {
 
 #main-header {
   margin: 2rem auto 1rem;
+  padding: 0 1rem;
   max-width: 960px;
   text-align: center;
   width: 90%;
@@ -55,6 +57,7 @@ a {
 
 #main-section {
   margin: auto;
+  padding: 0 1rem;
   max-width: 960px;
   text-align: center;
   width: 90%;
@@ -89,9 +92,16 @@ a {
   padding: 0.5rem 0 1.5rem;
   word-spacing: 0.2rem;
 
+  & > span {
+    display: inline-block;
+    margin: 0 auto;
+  }
+
   &:before,
   &:after {
-    content: " — ";
+    content: "—";
+    padding: 0 0.5rem;
+    display: inline-block;
   }
 }
 
@@ -99,7 +109,7 @@ a {
   background: black;
   text-align: center;
   color: #FFFFF0;
-  padding: 1.5rem 0 2em;
+  padding: 1.5rem 1rem 2em;
 
   .token__intro {
     display: inline-block;
@@ -139,6 +149,7 @@ a {
 
 .main-footer {
   margin-top: 2rem;
+  padding: 0 1rem;
   text-align: center;
   word-spacing: 0.3rem;
 }

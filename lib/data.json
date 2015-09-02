@@ -8,12 +8,14 @@
       "shipping": 300,
       "addonShipping": 200,
       "quantity": 40,
-      "coverPhotoSrc": "/dist/images/whiteys-woods/cover.png",
+      "order": 2,
+      "coverPhotoSrc": "/images/whiteys-woods/cover.png",
+      "height": 17,
+      "width": 11,
       "images": [
-        "/dist/images/whiteys-woods/cover.png",
-        "/dist/images/whiteys-woods/detail1.png",
-        "/dist/images/whiteys-woods/detail2.png",
-        "/dist/images/whiteys-woods/detail3.png"
+        "/images/whiteys-woods/cover.png",
+        "/images/whiteys-woods/detail1.png",
+        "/images/whiteys-woods/detail2.png"
       ]
     },
     {
@@ -23,16 +25,34 @@
       "price": 500,
       "shipping": 300,
       "addonShipping": 100,
-      "quantity": 0
+      "quantity": 0,
+      "order": 4,
+      "coverPhotoSrc": "/images/nothing-special/cover.png",
+      "height": 8.25,
+      "width": 5.25,
+      "images": [
+        "/images/nothing-special/cover.png",
+        "/images/nothing-special/detail1.png",
+        "/images/nothing-special/detail2.png"
+      ]
     },
     {
       "name": "Handout Comics No. 4",
-      "slug": "handout-comics-no-4",
+      "slug": "handout-comics-iv",
       "author": "Various Artists",
       "price": 0,
       "shipping": 200,
       "addonShipping": 100,
-      "quantity": 0
+      "quantity": 0,
+      "order": 5,
+      "coverPhotoSrc": "/images/handout-comics-iv/cover.png",
+      "height": 5.5,
+      "width": 4.25,
+      "images": [
+        "/images/handout-comics-iv/cover.png",
+        "/images/handout-comics-iv/detail1.png",
+        "/images/handout-comics-iv/detail2.png"
+      ]
     },
     {
       "name": "Nordhouse",
@@ -41,7 +61,16 @@
       "price": 500,
       "shipping": 300,
       "addonShipping": 100,
-      "quantity": 50
+      "quantity": 50,
+      "order": 6,
+      "coverPhotoSrc": "/images/nordhouse/cover.png",
+      "height": 6.5,
+      "width": 5,
+      "images": [
+        "/images/nordhouse/cover.png",
+        "/images/nordhouse/detail1.png",
+        "/images/nordhouse/detail2.png"
+      ]
     },
     {
       "name": "To-Do",
@@ -50,16 +79,34 @@
       "price": 300,
       "shipping": 200,
       "addonShipping": 50,
-      "quantity": 50
+      "quantity": 50,
+      "order": 3,
+      "coverPhotoSrc": "/images/to-do/cover.png",
+      "height": 5.5,
+      "width": 3.5,
+      "images": [
+        "/images/to-do/cover.png",
+        "/images/to-do/detail1.png",
+        "/images/to-do/detail2.png"
+      ]
     },
     {
-      "name": "Sand Dune",
-      "slug": "sand-dune",
-      "author": "Erik Schneider",
-      "price": 1000,
-      "shipping": 300,
-      "addonShipping": 100,
-      "quantity": 50
+      "name": "Trade-Off",
+      "slug": "trade-off",
+      "author": "Christine Gutierrez",
+      "price": 100,
+      "shipping": 200,
+      "addonShipping": 50,
+      "quantity": 40,
+      "order": 1,
+      "coverPhotoSrc": "/images/trade-off/cover.png",
+      "height": 5,
+      "width": 5,
+      "images": [
+        "/images/trade-off/cover.png",
+        "/images/trade-off/detail1.png",
+        "/images/trade-off/detail2.png"
+      ]
     }
   ],
   "cart": {

@@ -65,7 +65,14 @@ h1, h2, h3, h4, h5, h6 {
     clear: both;
   }
 
+  @media (max-width: 768px) {
+    .main-header__title {
+      float: none;
+    }
+  }
+
   @media (max-width: 540px) {
+    margin-bottom: 3rem;
   }
 }
 
@@ -90,6 +97,12 @@ h1, h2, h3, h4, h5, h6 {
 
   span {
     color: #999;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    display: block;
+    float: none;
   }
 }
 

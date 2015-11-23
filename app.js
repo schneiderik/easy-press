@@ -21,6 +21,7 @@ app.get('/', function (req, res) {
   var cart = req.cookies.easyCart;
 
   res.render('index', {
+    currentPageId: 'products',
     title: 'Easy Press',
     products: products,
     cart: cart,
@@ -28,14 +29,49 @@ app.get('/', function (req, res) {
   });
 });
 
-app.get('/products/:slug', function (req, res) {
+app.get('/about', function (req, res) {
+  var cart = req.cookies.easyCart;
+
+  res.render('about', {
+    currentPageId: 'about',
+    title: 'Easy Press: About',
+    cart: cart,
+    helpers: templateHelpers
+  });
+});
+
+app.get('/printing', function (req, res) {
+  var cart = req.cookies.easyCart;
+
+  res.render('printing', {
+    currentPageId: 'printing',
+    title: 'Easy Press: Printing',
+    cart: cart,
+    helpers: templateHelpers
+  });
+});
+
+app.get('/token', function (req, res) {
+  var cart = req.cookies.easyCart;
+
+  res.render('token', {
+    currentPageId: 'token',
+    title: 'Easy Press: Token',
+    cart: cart,
+    helpers: templateHelpers
+  });
+});
+
+app.get('/portfolio/:slug', function (req, res) {
   var product = database.getProduct(req.params.slug);
   var cart = req.cookies.easyCart;
 
   res.render('product', {
+    currentPageId: 'product',
     title: 'Easy Press: ' + product.name,
     product: product,
-    cart: cart
+    cart: cart,
+    helpers: templateHelpers
   });
 });
 

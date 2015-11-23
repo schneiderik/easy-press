@@ -1,0 +1,25 @@
+<nav id="main-navigation">
+  {{#ifCurrentPage "products" currentPageId}}
+    <span>Portfolio</span>
+  {{else}}
+    <a href="/">Portfolio</a>
+  {{/ifCurrentPage}}
+
+  {{#ifCurrentPage "about" currentPageId}}
+    <span>About</span>
+  {{else}}
+    <a href="/about">About</a>
+  {{/ifCurrentPage}}
+
+  {{#ifCurrentPage "printing" currentPageId}}
+    <span>Printing</span>
+  {{else}}
+    <a href="/printing">Printing</a>
+  {{/ifCurrentPage}}
+
+  {{#ifCurrentPage "token" currentPageId}}
+    <span>Token</span>
+  {{else}}
+    <a href="/token">Token</a>
+  {{/ifCurrentPage}}
+</nav>

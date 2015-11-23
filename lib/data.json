@@ -1,22 +1,78 @@
 {
   "products": [
     {
+      "name": "Flying Trash",
+      "slug": "flying-trash",
+      "author": "Erik Schneider",
+      "coverPhotoSrc": "/images/flying-trash/cover.png",
+      "height": 7,
+      "width": 4,
+      "images": [
+        "/images/flying-trash/detail1.png",
+        "/images/flying-trash/detail2.png"
+      ],
+      "description": "A couple of minutes in the life of an average seagull that end up cooler than expected.",
+      "details": "28 pgs. Green ink on French 70#T Pop-Tone Banana Split. Edition of 55."
+    },
+    {
+      "name": "The Dead Sound",
+      "slug": "dead-sound",
+      "author": "Tim Beard and Dave Scheidt",
+      "price": 300,
+      "shipping": 200,
+      "addonShipping": 100,
+      "quantity": 200,
+      "coverPhotoSrc": "/images/dead-sound/cover.png",
+      "height": 5.5,
+      "width": 4.25,
+      "images": [
+        "/images/dead-sound/detail1.png",
+        "/images/dead-sound/detail2.png"
+      ]
+    },
+    {
+      "name": "Shots",
+      "slug": "shots",
+      "author": "Jacob Halton",
+      "price": 500,
+      "shipping": 200,
+      "addonShipping": 100,
+      "quantity": 100,
+      "coverPhotoSrc": "/images/shots/cover.png",
+      "height": 5,
+      "width": 6.5,
+      "images": [
+        "/images/shots/detail1.png"
+      ]
+    },
+    {
+      "name": "Trade-Off",
+      "slug": "trade-off",
+      "author": "Christine Gutierrez",
+      "price": 100,
+      "shipping": 200,
+      "addonShipping": 50,
+      "quantity": 50,
+      "coverPhotoSrc": "/images/trade-off/cover.png",
+      "height": 5,
+      "width": 5,
+      "images": [
+        "/images/trade-off/detail1.png",
+        "/images/trade-off/detail2.png"
+      ]
+    },
+    {
       "name": "Whitey's Woods",
       "slug": "whiteys-woods",
       "author": "Erik Schneider",
       "price": 500,
       "shipping": 300,
       "addonShipping": 200,
-      "quantity": 40,
-      "order": 2,
+      "quantity": 50,
       "coverPhotoSrc": "/images/whiteys-woods/cover.png",
       "height": 17,
       "width": 11,
-      "images": [
-        "/images/whiteys-woods/cover.png",
-        "/images/whiteys-woods/detail1.png",
-        "/images/whiteys-woods/detail2.png"
-      ]
+      "images": []
     },
     {
       "name": "Nothing Special",
@@ -25,13 +81,11 @@
       "price": 500,
       "shipping": 300,
       "addonShipping": 100,
-      "quantity": 0,
-      "order": 4,
+      "quantity": 50,
       "coverPhotoSrc": "/images/nothing-special/cover.png",
       "height": 8.25,
       "width": 5.25,
       "images": [
-        "/images/nothing-special/cover.png",
         "/images/nothing-special/detail1.png",
         "/images/nothing-special/detail2.png"
       ]
@@ -43,13 +97,11 @@
       "price": 0,
       "shipping": 200,
       "addonShipping": 100,
-      "quantity": 0,
-      "order": 5,
+      "quantity": 300,
       "coverPhotoSrc": "/images/handout-comics-iv/cover.png",
       "height": 5.5,
       "width": 4.25,
       "images": [
-        "/images/handout-comics-iv/cover.png",
         "/images/handout-comics-iv/detail1.png",
         "/images/handout-comics-iv/detail2.png"
       ]
@@ -61,13 +113,11 @@
       "price": 500,
       "shipping": 300,
       "addonShipping": 100,
-      "quantity": 50,
-      "order": 6,
+      "quantity": 100,
       "coverPhotoSrc": "/images/nordhouse/cover.png",
       "height": 6.5,
       "width": 5,
       "images": [
-        "/images/nordhouse/cover.png",
         "/images/nordhouse/detail1.png",
         "/images/nordhouse/detail2.png"
       ]
@@ -79,33 +129,13 @@
       "price": 300,
       "shipping": 200,
       "addonShipping": 50,
-      "quantity": 50,
-      "order": 3,
+      "quantity": 80,
       "coverPhotoSrc": "/images/to-do/cover.png",
       "height": 5.5,
       "width": 3.5,
       "images": [
-        "/images/to-do/cover.png",
         "/images/to-do/detail1.png",
         "/images/to-do/detail2.png"
-      ]
-    },
-    {
-      "name": "Trade-Off",
-      "slug": "trade-off",
-      "author": "Christine Gutierrez",
-      "price": 100,
-      "shipping": 200,
-      "addonShipping": 50,
-      "quantity": 40,
-      "order": 1,
-      "coverPhotoSrc": "/images/trade-off/cover.png",
-      "height": 5,
-      "width": 5,
-      "images": [
-        "/images/trade-off/cover.png",
-        "/images/trade-off/detail1.png",
-        "/images/trade-off/detail2.png"
       ]
     }
   ],

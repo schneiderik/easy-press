@@ -40,17 +40,6 @@ app.get('/about', function (req, res) {
   });
 });
 
-app.get('/printing', function (req, res) {
-  var cart = req.cookies.easyCart;
-
-  res.render('printing', {
-    currentPageId: 'printing',
-    title: 'Easy Press: Printing',
-    cart: cart,
-    helpers: templateHelpers
-  });
-});
-
 app.get('/token', function (req, res) {
   var cart = req.cookies.easyCart;
 
@@ -75,4 +64,4 @@ app.get('/portfolio/:slug', function (req, res) {
   });
 });
 
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3000);

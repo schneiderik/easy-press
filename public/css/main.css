@@ -21,10 +21,11 @@ body {
   white-space: nowrap; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'bebas', 'helvetica neue', helvetica, sans-serif; }
+  font-family: 'helvetica neue', helvetica, sans-serif;
+  font-weight: 700; }
 
 #main-header {
-  margin: 1rem auto 3rem;
+  margin: 1rem auto 6rem;
   max-width: 768px;
   width: 90%; }
   #main-header .main-header__title {
@@ -86,8 +87,7 @@ h1, h2, h3, h4, h5, h6 {
     clear: both; }
 
 #product .product__name {
-  font-size: 1.5rem;
-  letter-spacing: 0.05rem; }
+  font-size: 1.5rem; }
 
 #product .product__author {
   color: #999;
@@ -131,10 +131,8 @@ h1, h2, h3, h4, h5, h6 {
     .product .product__cover-photo img {
       max-width: 100%;
       margin: auto; }
-  .product .product__name {
-    letter-spacing: 0.03rem; }
-    .product .product__name a {
-      color: #222; }
+  .product .product__name a {
+    color: #222; }
   .product .product__author {
     color: #999; }
   @media (max-width: 650px) {
@@ -212,7 +210,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     vertical-align: middle;
     float: right; }
-  @media (max-width: 640px) {
+  @media (max-width: 800px) {
     .main-footer {
       margin: 2rem auto 0; }
       .main-footer .main-footer__copyright {

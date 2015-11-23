@@ -48,11 +48,10 @@ h1, h2, h3, h4, h5, h6 {
   #main-header:after {
     clear: both; }
   @media (max-width: 768px) {
-    #main-header .main-header__title {
-      float: none; } }
-  @media (max-width: 540px) {
     #main-header {
-      margin-bottom: 3rem; } }
+      margin-bottom: 3rem; }
+      #main-header .main-header__title {
+        float: none; } }
 
 #main-navigation {
   float: right;

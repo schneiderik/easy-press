@@ -31,6 +31,33 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+.muted {
+  color: #999;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  margin-top: -2rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.topic {
+  display: inline-block;
+  border-bottom: 1px solid #CCC;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
 #main-header {
   margin: 1rem auto 6rem;
   max-width: 768px;

@@ -31,6 +31,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+h3 {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
 .muted {
   color: #999;
 }
@@ -101,6 +107,22 @@ p {
   }
 }
 
+nav {
+  margin-bottom: 1rem;
+  a,
+  span {
+    margin-right: 0.75rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  span {
+    color: #999;
+  }
+}
+
 #main-navigation {
   float: right;
   height: 3.236rem;
@@ -113,15 +135,6 @@ p {
   a,
   span {
     font-size: 1.2rem;
-    margin-right: 0.75rem;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  span {
-    color: #999;
   }
 
   @media (max-width: 768px) {
@@ -149,6 +162,8 @@ p {
 }
 
 #product {
+  margin-top: -2rem;
+
   .product__header {
     margin-bottom: 3rem;
 
@@ -238,12 +253,6 @@ p {
     }
   }
 
-  .product__name {
-    a {
-      color: #222;
-    }
-  }
-
   .product__author {
     color: #999;
   }
@@ -254,58 +263,6 @@ p {
 
   @media (max-width: 460px) {
     flex-basis: 100%;
-  }
-}
-
-.coming-soon {
-  padding: 0.5rem 0 1.5rem;
-  word-spacing: 0.2rem;
-
-  &:before,
-  &:after {
-    content: " — ";
-  }
-}
-
-.token {
-  background: black;
-  text-align: center;
-  color: #FFFFF0;
-  padding: 1.5rem 0 2em;
-
-  .token__intro {
-    display: inline-block;
-    margin: 0 0 1rem;
-    border: 2px solid #FFFFF0;
-    padding: 0.2rem 0.6rem;
-    word-spacing: 0.2rem;
-  }
-
-  .token__title {
-    font-size: 3rem;
-    letter-spacing: 0.17rem;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    word-spacing: 0.5rem;
-  }
-
-  .token__description {
-    font-size: 1.3rem;
-    letter-spacing: 0.03rem;
-    word-spacing: 0.3rem;
-  }
-
-  .token__nav {
-    padding-top: 1rem;
-    a {
-      color: #FFFFF0;
-      border-color: #FFFFF0;
-
-      &:hover {
-        color: desaturate(darken(#FFFFF0, 20%), 50%);
-        border-bottom: 2px solid desaturate(darken(#FFFFF0, 20%), 50%);
-      }
-    }
   }
 }
 

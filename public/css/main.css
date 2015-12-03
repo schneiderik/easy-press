@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: 'bebas';
   src: url("/fonts/bebas.eot");
@@ -23,6 +22,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'helvetica neue', helvetica, sans-serif;
   font-weight: 700; }
+
+h3 {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.8rem; }
 
 .muted {
   color: #999; }
@@ -75,6 +79,17 @@ p {
       #main-header .main-header__title {
         float: none; } }
 
+nav {
+  margin-bottom: 1rem; }
+  nav a,
+  nav span {
+    margin-right: 0.75rem; }
+    nav a:last-child,
+    nav span:last-child {
+      margin-right: 0; }
+  nav span {
+    color: #999; }
+
 #main-navigation {
   float: right;
   height: 3.236rem;
@@ -85,13 +100,7 @@ p {
   align-items: center; }
   #main-navigation a,
   #main-navigation span {
-    font-size: 1.2rem;
-    margin-right: 0.75rem; }
-    #main-navigation a:last-child,
-    #main-navigation span:last-child {
-      margin-right: 0; }
-  #main-navigation span {
-    color: #999; }
+    font-size: 1.2rem; }
   @media (max-width: 768px) {
     #main-navigation {
       width: 100%;
@@ -112,40 +121,37 @@ p {
   position: relative;
   left: 1.5%; }
 
-#product .product__header {
-  margin-bottom: 3rem; }
-  #product .product__header:before,
-  #product .product__header:after {
-    content: " ";
-    display: table; }
-  #product .product__header:after {
-    clear: both; }
-
-#product .product__name {
-  font-size: 1.5rem; }
-
-#product .product__author {
-  color: #999;
-  margin-bottom: 1rem; }
-
-#product .product__details {
-  color: #999; }
-
-#product .product__images figure {
-  width: 103%;
-  margin: 0 -1.5%; }
-
-@media (max-width: 540px) {
+#product {
+  margin-top: -2rem; }
   #product .product__header {
-    margin-bottom: 2rem; }
+    margin-bottom: 3rem; }
+    #product .product__header:before,
+    #product .product__header:after {
+      content: " ";
+      display: table; }
+    #product .product__header:after {
+      clear: both; }
+  #product .product__name {
+    font-size: 1.5rem; }
   #product .product__author {
-    float: none; }
-  #product .product__price {
-    float: none; }
-  #product .product__quantity {
-    float: none; }
-    #product .product__quantity:after {
-      content: ""; } }
+    color: #999;
+    margin-bottom: 1rem; }
+  #product .product__details {
+    color: #999; }
+  #product .product__images figure {
+    width: 103%;
+    margin: 0 -1.5%; }
+  @media (max-width: 540px) {
+    #product .product__header {
+      margin-bottom: 2rem; }
+    #product .product__author {
+      float: none; }
+    #product .product__price {
+      float: none; }
+    #product .product__quantity {
+      float: none; }
+      #product .product__quantity:after {
+        content: ""; } }
 
 .products {
   display: flex;
@@ -166,8 +172,6 @@ p {
     .product .product__cover-photo img {
       max-width: 100%;
       margin: auto; }
-  .product .product__name a {
-    color: #222; }
   .product .product__author {
     color: #999; }
   @media (max-width: 650px) {
@@ -176,43 +180,6 @@ p {
   @media (max-width: 460px) {
     .product {
       flex-basis: 100%; } }
-
-.coming-soon {
-  padding: 0.5rem 0 1.5rem;
-  word-spacing: 0.2rem; }
-  .coming-soon:before,
-  .coming-soon:after {
-    content: " — "; }
-
-.token {
-  background: black;
-  text-align: center;
-  color: #FFFFF0;
-  padding: 1.5rem 0 2em; }
-  .token .token__intro {
-    display: inline-block;
-    margin: 0 0 1rem;
-    border: 2px solid #FFFFF0;
-    padding: 0.2rem 0.6rem;
-    word-spacing: 0.2rem; }
-  .token .token__title {
-    font-size: 3rem;
-    letter-spacing: 0.17rem;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    word-spacing: 0.5rem; }
-  .token .token__description {
-    font-size: 1.3rem;
-    letter-spacing: 0.03rem;
-    word-spacing: 0.3rem; }
-  .token .token__nav {
-    padding-top: 1rem; }
-    .token .token__nav a {
-      color: #FFFFF0;
-      border-color: #FFFFF0; }
-      .token .token__nav a:hover {
-        color: #e2e2a7;
-        border-bottom: 2px solid #e2e2a7; }
 
 .main-footer {
   max-width: 768px;

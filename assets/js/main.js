@@ -1,100 +1,116 @@
-function Misprint() {
-  this.applyByDataAttribute();
+import Misprint from './misprint';
+
+let misprint = new Misprint();
+
+misprint.applyByDataAttribute();
+
+function isQuickLookLink(node) {
+  return node.tagName === 'A' && node.className.match(/quick-look/);
 }
 
-Misprint.prototype.getText = function (el) {
-  var text;
+function isQuickLookModalOverlayContent(node) {
+  return node.tagName === 'DIV' && node.className.match(/quick-look-modal__content/);
+}
 
-  if (el.innerText) {
-    text = el.innerText;
-  } else {
-    text = el.textContent;
-  }
+function isQuickLookModalOverlay(node) {
+  return node.tagName === 'DIV' && node.className.match(/quick-look-modal/);
+}
 
-  return text;
-};
+function handleBodyClick(event) {
+  let currentState = window.history.state;
+  let target = event.target || event.srcElement;
 
-Misprint.prototype.setText = function (el, text) {
-  if (el.innerText) {
-    el.innerText = text;
-  } else {
-    el.textContent = text;
-  }
-};
-
-Misprint.prototype.randomly = function () {
-  return Math.random() < 0.5 ? 0 : 1;
-};
-
-Misprint.prototype.slugRotation = function () {
-  var positiveOrNegative = this.randomly() ? 1 : -1;
-  return Math.random() * 3 * positiveOrNegative;
-};
-
-Misprint.prototype.slugSkew = function () {
-  var positiveOrNegative = this.randomly() ? 1 : -1;
-  return Math.random() * 3 * positiveOrNegative;
-};
-
-Misprint.prototype.slugTranslation = function (fontSize) {
-  var positiveOrNegative = this.randomly() ? 1 : -1;
-  var ratio = parseInt(fontSize, 10) / 25;
-  var num = Math.round(Math.random() * ratio) * positiveOrNegative;
-
-  return num;
-};
-
-Misprint.prototype.apply = function (el, context) {
-  var slugs, slugsLength, delimiter, slugEl, elStyles, i;
-  var text = this.getText(el);
-  context = context || 'word';
-
-  el.setAttribute('data-original-text', text);
-
-  if (context === 'char') {
-    delimiter = '';
-  } else {
-    delimiter = ' ';
-  }
-
-  slugs = text.split(delimiter);
-
-  slugsLength = slugs.length;
-  el.innerHTML = '';
-
-  for (i = 0; i < slugsLength; i++) {
-    slugEl = document.createElement('span');
-
-    this.setText(slugEl, slugs[i]);
-
-    elStyles = window.getComputedStyle(el);
-
-    slugEl.style.display = 'inline-block';
-    slugEl.style['white-space'] = 'pre';
-    slugEl.style.transform = 'rotate(' + this.slugRotation() + 'deg) translate(0,' + this.slugTranslation(elStyles.fontSize) + 'px) skew(' + this.slugSkew() + 'deg)';
-
-    if (el.innerHTML) {
-      el.innerHTML += delimiter;
+  while (true) { // eslint-disable-line no-constant-condition
+    if (target == null) { return; }
+    if (target === event.currentTarget) { return; }
+    if (isQuickLookModalOverlayContent(target)) { return; }
+    if (isQuickLookLink(target)) {
+      window.history.pushState(currentState, 'Product Page', target.href);
+      openQuickLookModal(target.href);
+      break;
+    }
+    if (isQuickLookModalOverlay(target)) {
+      closeQuickLookModal();
+      break;
     }
 
-    el.appendChild(slugEl);
-  }
-};
-
-Misprint.prototype.applyByDataAttribute = function () {
-  var i;
-  var wordEls = [].slice.call(document.querySelectorAll('[data-misprint="word"]'));
-  var charEls = [].slice.call(document.querySelectorAll('[data-misprint="char"]'));
-
-  for (i = 0; i < wordEls.length; i++) {
-    this.apply(wordEls[i]);
+    target = target.parentNode;
   }
 
-  for (i = 0; i < charEls.length; i++) {
-    this.apply(charEls[i], 'char');
-  }
-};
+  event.preventDefault();
+}
 
-module.exports = {
-  Misprint: Misprint
-};
+function handleKeydown(event) {
+  if (event.keyCode === 27) {
+    closeQuickLookModal();
+  }
+}
+
+function addClass(el, className) {
+  if (el.className.search(className) === -1) {
+    el.className += ' ' + className;
+  }
+}
+
+function removeClass(el, className) {
+  el.className = el.className.replace(' ' + className, '');
+}
+
+function closeQuickLookModal() {
+  let quickLookModal = document.querySelector('.quick-look-modal');
+
+  if (quickLookModal) {
+    quickLookModal.remove();
+    window.history.back();
+    removeClass(document.getElementsByTagName('html')[0], 'locked');
+  }
+}
+
+function openQuickLookModal(path) {
+  window.fetch(path)
+    .then(function (response) {
+      return response.text();
+    }).then(function (html) {
+      let quickLookModal = document.createElement('div');
+      let quickLookModalContent = document.createElement('div');
+      let quickLookModalDismiss = document.createElement('div');
+      let product;
+
+      product = html.match(/(<article id="product">(.|\n)*<\/article>)/)[0];
+
+      quickLookModal.className = 'quick-look-modal';
+      quickLookModalContent.className = 'quick-look-modal__content';
+      quickLookModalDismiss.className = 'quick-look-modal__dismiss';
+      quickLookModalDismiss.innerHTML = 'x';
+      quickLookModal.appendChild(quickLookModalContent);
+      quickLookModalContent.innerHTML = product;
+      quickLookModalContent.appendChild(quickLookModalDismiss);
+
+      addClass(document.getElementsByTagName('html')[0], 'locked');
+
+      document.body.appendChild(quickLookModal);
+    });
+}
+
+window.addEventListener('popstate', function () {
+  let quickLookModal = document.querySelector('.quick-look-modal');
+  let productListing = document.querySelector('.products');
+
+  if (window.location.pathname.match('/portfolio/')) {
+    openQuickLookModal(window.location.pathname);
+  }
+
+  if (window.location.pathname.match(/^\/$/) && !document.body.contains(productListing)) {
+    window.location = '/';
+  }
+
+  if (window.history.state === null) {
+    if (quickLookModal) {
+      quickLookModal.remove();
+    }
+  }
+}, false);
+
+document.body.addEventListener('click', handleBodyClick, false);
+
+window.addEventListener('keydown', handleKeydown, false);

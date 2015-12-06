@@ -6,6 +6,11 @@
       <div class="product__author">{{product.author}}</div>
       <div class="product__description">{{product.description}}</div>
       <div class="product__details">{{product.details}}</div>
+      {{#if product.storeLink }}
+        <div class="product__store-link">
+          <a href="{{product.storeLink}}">View in store</a>
+        </div>
+      {{/if }}
     </div>
   </div>
 

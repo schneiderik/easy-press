@@ -198,6 +198,8 @@ hr {
     margin-bottom: 1rem; }
   #product .product__details {
     color: #999; }
+  #product .product__store-link {
+    margin-top: 1rem; }
   #product .product__images figure {
     width: 103%;
     margin: 0 -1.5%; }

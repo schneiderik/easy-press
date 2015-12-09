@@ -51,7 +51,7 @@ app.get('/token', function (req, res) {
   });
 });
 
-app.get('/portfolio/:slug', function (req, res) {
+app.get('/products/:slug', function (req, res) {
   var product = database.getProduct(req.params.slug);
   var cart = req.cookies.easyCart;
 

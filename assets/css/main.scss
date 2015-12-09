@@ -149,7 +149,7 @@ nav {
   right: 0;
   left: 0;
   overflow-y: scroll;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.6);
 
   .quick-look-modal__content {
     position: relative;
@@ -328,6 +328,7 @@ hr {
 
   .product__name {
     font-size: 1.2rem;
+    font-weight: 200;
     a {
       text-decoration: none;
       color: #222;

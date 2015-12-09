@@ -26,8 +26,8 @@ html {
 body {
   background-color: #FFFFFF;
   color: #222;
-  font-size: 18px;
-  font-family: 'Droid Serif', helvetica, sans-serif;
+  font-size: 16px;
+  font-family: 'helvetica neue', helvetica, sans-serif;
   line-height: 1.8;
   font-weight: 400;
 
@@ -38,7 +38,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Droid Serif', helvetica, sans-serif;
+  font-family: 'helvetica neue', helvetica, sans-serif;
   font-weight: 700;
 }
 
@@ -51,7 +51,7 @@ h2 {
 h3 {
   font-weight: 700;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -60,6 +60,7 @@ h3 {
 }
 
 p {
+  font-family: 'Droid Serif', helvetica, sans-serif;
   margin-bottom: 1rem;
 }
 
@@ -83,7 +84,7 @@ p {
 }
 
 #main-header {
-  margin: 1rem auto 6rem;
+  margin: 1rem auto 3rem;
   max-width: 768px;
   width: 90%;
 
@@ -189,6 +190,7 @@ nav {
   a,
   span {
     font-size: 1.2rem;
+    font-weight: 200;
   }
 
   @media (max-width: 768px) {
@@ -315,17 +317,28 @@ hr {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: baseline;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .product {
-  flex-basis: 33%;
+  flex-basis: 31%;
   margin-bottom: 3rem;
-  text-align: center;
+  text-align: left;
+
+  .product__name {
+    font-size: 1.2rem;
+    a {
+      text-decoration: none;
+      color: #222;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 
   .product__cover-photo {
-    margin-bottom: 0.5rem;
     & > a {
       text-decoration: none;
       border: none;
@@ -336,12 +349,13 @@ hr {
     }
 
     img {
-      max-width: 100%;
-      margin: auto;
+      max-width: 102%;
+      margin: 0 -1%;
     }
   }
 
   .product__author {
+    font-weight: 200;
     color: #999;
   }
 

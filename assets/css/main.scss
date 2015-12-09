@@ -26,10 +26,10 @@ html {
 body {
   background-color: #FFFFFF;
   color: #222;
-  font-size: 16px;
-  font-family: 'helvetica neue', helvetica, sans-serif;
-  line-height: 1.618;
-  font-weight: 300;
+  font-size: 18px;
+  font-family: 'Droid Serif', helvetica, sans-serif;
+  line-height: 1.8;
+  font-weight: 400;
 
 }
 
@@ -38,18 +38,18 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'helvetica neue', helvetica, sans-serif;
+  font-family: 'Droid Serif', helvetica, sans-serif;
   font-weight: 700;
 }
 
 h2 {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 h3 {
-  font-weight: 500;
+  font-weight: 700;
   text-transform: uppercase;
   font-size: 0.8rem;
   margin-bottom: 1rem;
@@ -64,7 +64,7 @@ p {
 }
 
 .title {
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   margin-bottom: 0.5rem;
   margin-top: -2rem;
 }
@@ -221,7 +221,7 @@ nav {
 }
 
 hr {
-  margin: 3rem 0 5rem;
+  margin: 5rem 0 7rem;
   text-align: center;
   background: transparent;
   border: none;
@@ -237,7 +237,7 @@ hr {
 .tokens {
   margin: 1rem 0;
   .token {
-    max-width: 150px;
+    max-width: 148px;
   }
 }
 
@@ -329,6 +329,10 @@ hr {
     & > a {
       text-decoration: none;
       border: none;
+
+      &:hover img {
+        opacity: 0.85;
+      }
     }
 
     img {

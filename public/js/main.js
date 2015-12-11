@@ -19,6 +19,10 @@ function isQuickLookModalOverlayContent(node) {
   return node.tagName === 'DIV' && node.className.match(/quick-look-modal__content/);
 }
 
+function isQuickLookModalOverlayDismissBar(node) {
+  return node.tagName === 'DIV' && node.className.match(/quick-look-modal__dismiss-bar/);
+}
+
 function isQuickLookModalOverlay(node) {
   return node.tagName === 'DIV' && node.className.match(/quick-look-modal/);
 }
@@ -36,6 +40,9 @@ function handleBodyClick(event) {
       return;
     }
     if (isQuickLookModalOverlayContent(target)) {
+      return;
+    }
+    if (isQuickLookModalOverlayDismissBar(target)) {
       return;
     }
     if (isQuickLookLink(target)) {
@@ -86,6 +93,7 @@ function openQuickLookModal(path) {
   }).then(function (html) {
     var quickLookModal = document.createElement('div');
     var quickLookModalContent = document.createElement('div');
+    var quickLookModalDismissBar = document.createElement('div');
     var quickLookModalDismiss = document.createElement('div');
     var product = undefined;
 
@@ -93,11 +101,13 @@ function openQuickLookModal(path) {
 
     quickLookModal.className = 'quick-look-modal';
     quickLookModalContent.className = 'quick-look-modal__content';
+    quickLookModalDismissBar.className = 'quick-look-modal__dismiss-bar';
     quickLookModalDismiss.className = 'quick-look-modal__dismiss';
-    quickLookModalDismiss.innerHTML = 'x';
+    quickLookModalDismiss.innerHTML = '&times;';
     quickLookModal.appendChild(quickLookModalContent);
     quickLookModalContent.innerHTML = product;
-    quickLookModalContent.appendChild(quickLookModalDismiss);
+    quickLookModalDismissBar.appendChild(quickLookModalDismiss);
+    quickLookModalContent.appendChild(quickLookModalDismissBar);
 
     addClass(document.getElementsByTagName('html')[0], 'locked');
 

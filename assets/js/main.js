@@ -47,8 +47,6 @@ function handleClickModalTrigger(event, target) {
 function handleClickModalOverlay(event) {
   let target = event.target || event.srcElement;
 
-  console.log(target);
-
   if (matchesSelector(target, '.quick-look-modal__dismiss-bar, .quick-look-modal__content, .quick-look-modal__content *')) {
     return;
   }

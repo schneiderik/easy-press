@@ -29,8 +29,6 @@ class DelegatedEventRegistry {
 
       target = target.parentNode;
     }
-
-    event.preventDefault();
   }
 }
 

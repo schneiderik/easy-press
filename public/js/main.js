@@ -54,8 +54,6 @@ var DelegatedEventRegistry = (function () {
 
         target = target.parentNode;
       }
-
-      event.preventDefault();
     }
   }]);
 
@@ -129,8 +127,6 @@ function handleClickModalTrigger(event, target) {
 
 function handleClickModalOverlay(event) {
   var target = event.target || event.srcElement;
-
-  console.log(target);
 
   if ((0, _matchesSelectorJs2['default'])(target, '.quick-look-modal__dismiss-bar, .quick-look-modal__content, .quick-look-modal__content *')) {
     return;

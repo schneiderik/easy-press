@@ -1,124 +1,77 @@
 import Misprint from './misprint';
+import matchesSelector from './matches-selector.js';
+import Modal from './modal';
+import DelegatedEventRegistry from './delegated-event-registry';
 
 let misprint = new Misprint();
+let modal = new Modal();
+let bodyEvents = new DelegatedEventRegistry(document.body, 'click', { // eslint-disable-line no-unused-vars
+  '.quick-look-modal': handleClickModalOverlay,
+  '.quick-look-modal__dismiss-link': window.history.back.bind(window.history),
+  '.quick-look-trigger': handleClickModalTrigger
+});
+
+window.addEventListener('popstate', handlePopstate, false);
+window.addEventListener('keydown', handleKeydown, false);
 
 misprint.applyByDataAttribute();
 
-function isQuickLookLink(node) {
-  return node.tagName === 'A' && node.className.match(/quick-look/);
-}
-
-function isQuickLookModalOverlayContent(node) {
-  return node.tagName === 'DIV' && node.className.match(/quick-look-modal__content/);
-}
-
-function isQuickLookModalOverlayDismissBar(node) {
-  return node.tagName === 'DIV' && node.className.match(/quick-look-modal__dismiss-bar/);
-}
-
-function isQuickLookModalOverlay(node) {
-  return node.tagName === 'DIV' && node.className.match(/quick-look-modal/);
-}
-
-function handleBodyClick(event) {
-  let currentState = window.history.state;
-  let target = event.target || event.srcElement;
-
-  while (true) { // eslint-disable-line no-constant-condition
-    if (target == null) { return; }
-    if (target === event.currentTarget) { return; }
-    if (isQuickLookModalOverlayContent(target)) { return; }
-    if (isQuickLookModalOverlayDismissBar(target)) { return; }
-    if (isQuickLookLink(target)) {
-      window.history.pushState(currentState, 'Product Page', target.href);
-      openQuickLookModal(target.href);
-      break;
-    }
-    if (isQuickLookModalOverlay(target)) {
-      closeQuickLookModal();
-      break;
-    }
-
-    target = target.parentNode;
-  }
-
-  event.preventDefault();
-}
-
-function handleKeydown(event) {
-  if (event.keyCode === 27) {
-    closeQuickLookModal();
-  }
-}
-
-function addClass(el, className) {
-  if (el.className.search(className) === -1) {
-    el.className += ' ' + className;
-  }
-}
-
-function removeClass(el, className) {
-  el.className = el.className.replace(' ' + className, '');
-}
-
-function closeQuickLookModal() {
-  let quickLookModal = document.querySelector('.quick-look-modal');
-
-  if (quickLookModal) {
-    quickLookModal.remove();
-    window.history.back();
-    removeClass(document.getElementsByTagName('html')[0], 'locked');
-  }
-}
-
-function openQuickLookModal(path) {
-  window.fetch(path)
-    .then(function (response) {
-      return response.text();
-    }).then(function (html) {
-      let quickLookModal = document.createElement('div');
-      let quickLookModalContent = document.createElement('div');
-      let quickLookModalDismissBar = document.createElement('div');
-      let quickLookModalDismiss = document.createElement('div');
-      let product;
-
-      product = html.match(/(<article id="product">(.|\n)*<\/article>)/)[0];
-
-      quickLookModal.className = 'quick-look-modal';
-      quickLookModalContent.className = 'quick-look-modal__content';
-      quickLookModalDismissBar.className = 'quick-look-modal__dismiss-bar';
-      quickLookModalDismiss.className = 'quick-look-modal__dismiss';
-      quickLookModalDismiss.innerHTML = '&times;';
-      quickLookModal.appendChild(quickLookModalContent);
-      quickLookModalContent.innerHTML = product;
-      quickLookModalDismissBar.appendChild(quickLookModalDismiss);
-      quickLookModalContent.appendChild(quickLookModalDismissBar);
-
-      addClass(document.getElementsByTagName('html')[0], 'locked');
-
-      document.body.appendChild(quickLookModal);
-    });
-}
-
-window.addEventListener('popstate', function () {
-  let quickLookModal = document.querySelector('.quick-look-modal');
+function handlePopstate() {
   let productListing = document.querySelector('.products');
 
-  if (window.location.pathname.match('/portfolio/')) {
-    openQuickLookModal(window.location.pathname);
+  // If you navigate to popstate in the history that is a product page, load it in a modal.
+  if (window.location.pathname.match('/products/')) {
+    fetchProductHTML(window.location.pathname);
   }
 
+  // If you are on the product page and hit back, but the previous page was a popstate.
   if (window.location.pathname.match(/^\/$/) && !document.body.contains(productListing)) {
     window.location = '/';
   }
 
+  // If you press back while looing at the modal
   if (window.history.state === null) {
-    if (quickLookModal) {
-      quickLookModal.remove();
-    }
+    modal.close();
   }
-}, false);
+}
 
-document.body.addEventListener('click', handleBodyClick, false);
+function handleClickModalTrigger(event, target) {
+  let currentState = window.history.state;
 
-window.addEventListener('keydown', handleKeydown, false);
+  window.history.pushState(currentState, 'Product Page', target.href);
+  fetchProductHTML(target.href);
+
+  event.preventDefault();
+}
+
+function handleClickModalOverlay(event) {
+  let target = event.target || event.srcElement;
+
+  console.log(target);
+
+  if (matchesSelector(target, '.quick-look-modal__dismiss-bar, .quick-look-modal__content, .quick-look-modal__content *')) {
+    return;
+  }
+
+  window.history.back();
+}
+
+function handleKeydown(event) {
+  if (event.keyCode === 27) {
+    window.history.back();
+    modal.close();
+  }
+}
+
+function fetchProductHTML(path) {
+  window.fetch(path)
+    .then(function (response) {
+      return response.text();
+    }).then(function (html) {
+      let product;
+      product = html.match(/(<article id="product">(.|\n)*<\/article>)/)[0];
+
+      modal.setContent(product);
+      modal.open();
+    });
+}

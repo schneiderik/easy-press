@@ -1,6 +1,47 @@
 {
   "products": [
     {
+      "name": "Still Guilty",
+      "slug": "still-guilty",
+      "author": "Erik Schneider",
+      "coverPhotoSrc": "/images/still-guilty/cover.png",
+      "height": 5,
+      "width": 7,
+      "images": [
+        "/images/still-guilty/detail1.png",
+        "/images/still-guilty/detail2.png"
+      ],
+      "description": "The author as a young boy breaks his mother's discman and he still feels guilty about it.",
+      "details": "12 pgs. Black and Mahagony ink on French Paper 70#T Poptone Sweettooth. Edition of 100.",
+      "storeLink": "http://store.easy-press.co/product/still-guilty"
+    },
+    {
+      "name": "Help!",
+      "slug": "help",
+      "author": "Christine Gutierrez",
+      "coverPhotoSrc": "/images/help/cover.png",
+      "height": 7,
+      "width": 5,
+      "images": [
+        "/images/help/detail1.png"
+      ],
+      "description": "Help your community grow, achieve, learn, and build! It's amazing what a helping hand can do.",
+      "details": "8 pgs. Black and Mahagony ink on French Paper 70#T Poptone Sweettooth. Edition of 50.",
+      "storeLink": "http://store.easy-press.co/product/help"
+    },
+    {
+      "name": "Hecho en Mexico",
+      "slug": "hecho-en-mexico",
+      "author": "Christine Gutierrez",
+      "coverPhotoSrc": "/images/hecho-en-mexico/cover.png",
+      "height": 4,
+      "width": 8,
+      "images": [],
+      "description": "",
+      "details": "Blue and Yellow ink on French Paper 100#C Contruction Whitewash. Edition of 40.",
+      "storeLink": "http://store.easy-press.co/product/hecho-en-mexico"
+    },
+    {
       "name": "Flying Trash",
       "slug": "flying-trash",
       "author": "Erik Schneider",

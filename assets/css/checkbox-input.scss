@@ -1,0 +1,33 @@
+.checkbox-input {
+  cursor: pointer;
+
+  .checkbox-input__label {
+    cursor: pointer;
+  }
+
+  .checkbox-input__input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+
+    display: inline-block;
+    vertical-align: middle;
+    height: lh(0.75);
+    width: lh(0.75);
+    border: 1px solid $grey-dark;
+    border-radius: 2px;
+    margin-top: lh(0.1);
+    margin-bottom: lh(0.15);
+    margin-left: 0;
+    margin-right: lh(0.25);
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:checked {
+      background: $blue;
+    }
+  }
+}

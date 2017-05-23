@@ -1,0 +1,15 @@
+.product-listing {
+	@include column-gap(lh(2));
+
+	@media (min-width: $mq-small) {
+		@include column-count(2);
+	}
+
+	@media (min-width: $mq-medium) {
+		@include column-count(3);
+	}
+
+	@media (min-width: $mq-large) {
+		@include column-count(4);
+	}
+}

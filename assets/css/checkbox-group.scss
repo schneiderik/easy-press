@@ -1,0 +1,9 @@
+.checkbox-group {
+  &:not(:first-child) {
+    margin-top: lh(1);
+  }
+
+  .checkbox-group__title {
+    margin-bottom: lh(0.25);
+  }
+}

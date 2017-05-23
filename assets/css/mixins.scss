@@ -1,12 +1,11 @@
-@mixin clearfix() {
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-
-  &:after {
-    clear: both;
-  }
+@mixin column-count($n) {
+  column-count: $n;
+  -webkit-column-count: $n;
+  -moz-column-count: $n;
 }
 
+@mixin column-gap($n) {
+	column-gap: $n;
+	-webkit-column-gap: $n;
+	-moz-column-gap: $n;
+}

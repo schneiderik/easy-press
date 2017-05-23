@@ -1,0 +1,35 @@
+.main-header {
+  height: lh(3);
+  padding-top: lh(1);
+  padding-bottom: lh(1);
+  padding-left: lh(2);
+  padding-right: lh(2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-header__logo {
+  height: lh(2);
+  width: auto;
+  position: relative;
+  top: lh(0.4);
+}
+
+.main-header__link {
+	text-decoration: none;
+	color: #999;
+
+  &:not(:last-child) {
+    margin-right: lh(1);
+  }
+
+	&:hover {
+		cursor: pointer;
+		color: #000;
+	}
+
+	&.active {
+		color: #000;
+	}
+}

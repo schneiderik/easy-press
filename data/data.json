@@ -1,0 +1,173 @@
+{
+  "products": [
+    {
+      "name": "Still Guilty",
+      "slug": "still-guilty",
+      "author": "Erik Schneider",
+      "coverPhotoSrc": "/images/still-guilty/cover.png",
+      "images": [
+        "/images/still-guilty/detail1.png",
+        "/images/still-guilty/detail2.png"
+      ],
+      "category": [
+        "Comic"
+      ],
+      "description": "The author as a young boy breaks his mother's discman and he still feels guilty about it.",
+      "details": "12 pgs. Black and Mahagony ink on French Paper 70#T Poptone Sweettooth. Edition of 100."
+    },
+    {
+      "name": "Help!",
+      "slug": "help",
+      "author": "Christine Gutierrez",
+      "coverPhotoSrc": "/images/help/cover.png",
+      "images": [
+        "/images/help/detail1.png"
+      ],
+      "category": [
+        "Zine"
+      ],
+      "description": "Help your community grow, achieve, learn, and build! It's amazing what a helping hand can do.",
+      "details": "8 pgs. Black and Mahagony ink on French Paper 70#T Poptone Sweettooth. Edition of 50."
+    },
+    {
+      "name": "Hecho en Mexico",
+      "slug": "hecho-en-mexico",
+      "author": "Christine Gutierrez",
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/hecho-en-mexico/cover.png",
+      "details": "Blue and Yellow ink on French Paper 100#C Contruction Whitewash. Edition of 40."
+    },
+    {
+      "name": "Flying Trash",
+      "slug": "flying-trash",
+      "author": "Erik Schneider",
+      "coverPhotoSrc": "/images/flying-trash/cover.png",
+      "images": [
+        "/images/flying-trash/detail1.png",
+        "/images/flying-trash/detail2.png"
+      ],
+      "category": [
+        "Comic"
+      ],
+      "description": "A couple of minutes in the life of an average seagull that end up cooler than expected.",
+      "details": "28 pgs. Green ink on French Paper 70#T Pop-Tone Banana Split. Edition of 55."
+    },
+    {
+      "name": "The Dead Sound",
+      "slug": "dead-sound",
+      "author": ["Tim Beard", "Dave Scheidt"],
+      "coverPhotoSrc": "/images/dead-sound/cover.png",
+      "images": [
+        "/images/dead-sound/detail1.png",
+        "/images/dead-sound/detail2.png"
+      ],
+      "category": [
+        "Comic"
+      ],
+      "description": "A skeleton band reunites for one last time to play a gig on Halloween night.",
+      "details": "16 pgs. Black ink on French Paper 70#T Pop-Tone Lemon Drop and 65#C Pop-Tone Orange Fizz. Edition of 200."
+    },
+    {
+      "name": "Shots",
+      "slug": "shots",
+      "author": "Jacob Halton",
+      "coverPhotoSrc": "/images/shots/cover.png",
+      "images": [
+        "/images/shots/detail1.png"
+      ],
+      "category": [
+        "Comic"
+      ],
+      "description": "A man struggles with regret as he attempts to sink one last free-throw.",
+      "details": "16 pgs. Black ink on French Paper 70#T Construction Recycled White and 65#C Pop-Tone Orange Fizz. Edition of 100."
+    },
+    {
+      "name": "Trade-Off",
+      "slug": "trade-off",
+      "author": "Christine Gutierrez",
+      "coverPhotoSrc": "/images/trade-off/cover.png",
+      "images": [
+        "/images/trade-off/detail1.png",
+        "/images/trade-off/detail2.png"
+      ],
+      "category": [
+        "Zine"
+      ],
+      "description": "An exploration of lighting and tone comparing familiar objects of the city and countryside",
+      "details": "16 pgs. Black and blue ink on French Paper 50#T Dur-O-Tone Newspaper White. Edition of 50."
+    },
+    {
+      "name": "Whitey's Woods",
+      "slug": "whiteys-woods",
+      "author": "Erik Schneider",
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/whiteys-woods/cover.png",
+      "description": "A short essay reflecting on the single image the author conjures when he thinks of home.",
+      "details": "Black, green, and blue ink on French Paper 80#C Construction Whitewash. Edition of 50."
+    },
+    {
+      "name": "Nothing Special",
+      "slug": "nothing-special",
+      "author": "Lane Fujita",
+      "coverPhotoSrc": "/images/nothing-special/cover.png",
+      "images": [
+        "/images/nothing-special/detail1.png",
+        "/images/nothing-special/detail2.png"
+      ],
+      "category": [
+        "Zine"
+      ],
+      "description": "A trip to Japan reconnects the author with his family and heritage.",
+      "details": "24 pgs. Laminated gold foil adheared to toner on French Paper 80#C Construction Electric Red with black Risograph on general newsprint interiors. Edition of 75."
+    },
+    {
+      "name": "Handout Comics No. 4",
+      "slug": "handout-comics-iv",
+      "author": "Various Artists",
+      "coverPhotoSrc": "/images/handout-comics-iv/cover.png",
+      "images": [
+        "/images/handout-comics-iv/detail1.png",
+        "/images/handout-comics-iv/detail2.png"
+      ],
+      "category": [
+        "Comic"
+      ],
+      "description": "The 2015 edition of a free minicomic featuring several local artists.",
+      "details": "32 pgs. Black ink on French Paper 50#T Dur-O-Tone Newspaper Aged. Edition of 300."
+    },
+    {
+      "name": "Nordhouse",
+      "slug": "nordhouse",
+      "author": "Erik Schneider",
+      "coverPhotoSrc": "/images/nordhouse/cover.png",
+      "images": [
+        "/images/nordhouse/detail1.png",
+        "/images/nordhouse/detail2.png"
+      ],
+      "category": [
+        "Comic"
+      ],
+      "description": "Three friends meet for a camping trip at the Nordhouse Dunes in western Michigan where drinking leads to quiet moments of self-reflection and comradery.",
+      "details": "48 pgs. Blue and green ink on French Paper 70#T and 80#C Construction Whitewash. Edition of 100."
+    },
+    {
+      "name": "To-Do",
+      "slug": "to-do",
+      "author": "Erik Schneider",
+      "coverPhotoSrc": "/images/to-do/cover.png",
+      "images": [
+        "/images/to-do/detail1.png",
+        "/images/to-do/detail2.png"
+      ],
+      "category": [
+        "Comic"
+      ],
+      "description": "An organized vigilante uses his skills in project managment to out-plan a criminal.",
+      "details": "28 pgs. Blue and black ink on French Paper 80#C Construction Whitewash and one color black Risograph interiors on French Paper 50#T Dur-O-Tone Newspaper White. Edition of 80."
+    }
+  ]
+}

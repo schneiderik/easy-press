@@ -1,0 +1,18 @@
+$golden-ratio: 1.618;
+$font-size: 18px;
+$line-height: $golden-ratio * 1rem;
+
+@function lh($n){
+  @return $n * $line-height;
+}
+
+$mq-xsmall: 768px;
+$mq-small: 980px;
+$mq-medium: 1200px;
+$mq-large: 1600px;
+
+$black: #000;
+$grey-dark: #888;
+$grey: #AAA;
+$grey-light: #BBB;
+$blue: blue;

@@ -8,7 +8,12 @@ class ProductListing extends React.Component {
 
 	products() {
 		return this.props.products.map((product) => 
-			<Product slug={product.slug} title={product.name} author={product.author} coverSrc={product.coverPhotoSrc} />
+			<Product
+        slug={product.attributes.slug}
+        title={product.attributes.name}
+        author={product.attributes.author}
+        coverSrc={product.attributes.coverPhotoSrc}
+      />
 		);
 	}
 

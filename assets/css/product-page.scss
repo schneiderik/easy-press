@@ -1,0 +1,31 @@
+.product-page {
+  width: 100%;
+  display: flex;
+  margin-left: lh(-1);
+  margin-right: lh(-1);
+
+  .product-page__overview {
+    flex: 0 0 50%;
+    padding-left: lh(1); 
+    padding-right: lh(1); 
+  }
+
+  .product-page__images {
+    flex: 0 0 50%;
+		width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    padding-left: lh(1); 
+    padding-right: lh(1); 
+    position: relative;
+    text-align: center;
+  }
+
+  .product-page__image {
+    z-index: 1;
+    width: auto;
+    max-width: 100%;
+    max-height: 700px;
+    margin-bottom: lh(1);
+  }
+}

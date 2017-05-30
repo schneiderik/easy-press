@@ -14,4 +14,8 @@ app.get('/about', function (req, res) {
   res.sendFile('/about.html', {root: './public'});
 });
 
+app.get('/product/:slug', function (req, res) {
+  res.sendFile('/product/' + req.params.slug + '.html', {root: './public'});
+});
+
 app.listen(process.env.PORT || 3000);

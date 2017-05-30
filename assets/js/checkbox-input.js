@@ -4,16 +4,15 @@ class CheckboxInput extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      isChecked: Boolean(this.props.isChecked)
-    }
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
     const target = e.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.value;
+    const checked = target.checked;
 
-    this.props.onChange(value);
+    this.props.onChange(value, checked, this.props.name);
   }
 
   render() {
@@ -25,7 +24,8 @@ class CheckboxInput extends React.Component {
             type="checkbox"
             id={this.props.id}
             name={this.props.name} 
-            checked={this.state.isChecked}
+            value={this.props.value}
+            checked={this.props.isChecked}
             onChange={this.handleChange}
           />
           {this.props.label}

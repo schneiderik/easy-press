@@ -8,3 +8,12 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.main-footer__item {
+	display: flex;
+	align-items: middle;
+}
+
+.main-footer__copyright {
+	margin-left: lh(0.5);
+}

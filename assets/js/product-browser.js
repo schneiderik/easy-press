@@ -1,43 +1,57 @@
 import React from 'react';
 import ProductFilters from './product-filters';
 import ProductListing from './product-listing';
+import ProductCollection from './product-collection';
 
 class ProductBrowser extends React.Component {
   constructor(props) {
     super(props);
 
+    this.productCollection = new ProductCollection(this.props.products);
+    this.authors = this.productCollection.valuesFor('author');
+    this.categories = this.productCollection.valuesFor('category');
     this.handleFilterChange = this.handleFilterChange.bind(this);
 
 		this.state = {
-			filteredProducts: this.props.products
+			filteredProducts: this.productCollection.models,
+      filters: {
+        inStock: null,
+        category: new Set(),
+        author: new Set()
+      }
 		};
   }
 
-  filterProducts(filters) {
-    return this.props.products.filter(product => {
-      return filters.every(key => {
-        if (key === 'in-stock') {
-          return product.quantity > 0;
-        } else {
-          return filters[key].every(condition => {
-            return product[key].includes(condition);
-          });
-        } 
-      });
-    });
-  }
+  handleFilterChange(value, isChecked, name) {
+    this.setState((prevState, props) => {
+      let filters = Object.assign({}, prevState.filters);
 
-  onFilterChange(filters) {
-    this.setState({
-      filteredProducts: this.filterProducts(filters)
+      if (filters[name] instanceof Set) {
+        isChecked ? filters[name].add(value) : filters[name].delete(value);
+      } else {
+        filters[name] = isChecked ? value : null;
+      }
+
+      return {
+        filters: filters,
+        filteredProducts: this.productCollection.filterBy(filters)
+      }
     });
   }
 
   render() {
     return (
       <div className="product-browser">
-        <ProductFilters products={this.props.products} onFilterChange={this.handleFilterChange}/>
-        <ProductListing products={this.state.filteredProducts} />
+        <ProductFilters
+          filters={this.state.filters}
+          authors={this.authors}
+          categories={this.categories}
+          onChange={this.handleFilterChange}
+        />
+
+        <ProductListing
+          products={this.state.filteredProducts}
+        />
       </div>
     );
   }

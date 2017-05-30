@@ -1,6 +1,4 @@
 .checkbox-input {
-  cursor: pointer;
-
   .checkbox-input__label {
     cursor: pointer;
   }
@@ -27,7 +25,21 @@
     }
 
     &:checked {
+			border-color: $blue;
       background: $blue;
+  
+			&:after{
+				content: '';
+				display: block;
+				width: 4px;
+				height: 8px;
+				border: solid $white;
+				border-width: 0 3px 3px 0;
+				transform: rotate(45deg);
+				position: relative;
+				top: 2px;
+				left: 5px;
+			}
     }
   }
 }

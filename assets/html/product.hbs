@@ -1,0 +1,19 @@
+---
+pageName: shop
+---
+
+<div class="product-page">
+  <div class="product-page__images">
+    <img class="product-page__image" src="{{coverPhotoSrc}}" /> 
+    {{#each images}}
+      <img class="product-page__image" src="{{this}}" /> 
+    {{/each}}
+  </div>
+
+  <div class="product-page__overview">
+    <h1 class="product-page__title">{{name}}</h1>
+    <p class="product-page__author">{{author}}</p>
+    <p class="product-page__description">{{description}}</p>
+    <p class="product-page__details">{{details}}</p>
+  </div>
+</div>

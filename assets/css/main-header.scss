@@ -1,6 +1,6 @@
 .main-header {
   height: lh(3);
-  padding-top: lh(1);
+  padding-top: lh(2);
   padding-bottom: lh(1);
   padding-left: lh(2);
   padding-right: lh(2);
@@ -14,14 +14,16 @@
   width: auto;
   position: relative;
   top: lh(0.4);
+	left: lh(-0.75);
 }
 
 .main-header__link {
+	font-size: 24px;
 	text-decoration: none;
 	color: #999;
 
   &:not(:last-child) {
-    margin-right: lh(1);
+    margin-right: lh(2);
   }
 
 	&:hover {

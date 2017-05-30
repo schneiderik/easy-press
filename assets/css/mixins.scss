@@ -9,3 +9,9 @@
 	-webkit-column-gap: $n;
 	-moz-column-gap: $n;
 }
+
+@mixin column-width($n) {
+	column-width: $n;
+	-webkit-column-width: $n;
+	-moz-column-width: $n;
+}

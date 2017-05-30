@@ -1,9 +1,219 @@
 {
   "products": [
     {
+      "name": "Free Comic 2017",
+      "slug": "free-comic-2017",
+      "author": "Various Artists",
+      "quantity": 0,
+      "coverPhotoSrc": "/images/free-comic-2017/cover.png",
+      "images": [
+        "/images/free-comic-2017/detail1.png",
+        "/images/free-comic-2017/detail2.png"
+      ],
+      "category": [
+        "Comic"
+      ],
+      "description": "A free mini-comic for Free Comic Book Day 2017 with contributions from Pam Wishbow, James Stanton, Jonathan Bell Wolfe, Lara Kaminoff, Erik Schneider Gutierrez, and Bjorn Daniel Miner.",
+      "details": "28 pgs. Blue and Mahagony ink on French Paper 50#T Dur-O-Tone Newspaper White. Edition of 300."
+    },
+    {
+      "name": "Foreman General: Issue Two",
+      "slug": "foreman-general-two",
+      "author": "Gutierrez, Erik Schneider",
+      "quantity": 50,
+      "coverPhotoSrc": "/images/foreman-general-two/cover.png",
+      "images": [
+        "/images/foreman-general-two/detail1.png",
+        "/images/foreman-general-two/detail2.png"
+      ],
+      "category": [
+        "Comic"
+      ],
+      "description": "Global Mega City Construction strong-arms a deal with the government.",
+      "details": "16 pgs. Blue ink on French Paper 70#T Glo-tone Orange Light. Edition of 50."
+    },
+    {
+      "name": "Cat Claw",
+      "slug": "cat-claw",
+      "author": "Gutierrez, Erik Schneider",
+      "quantity": 50,
+      "coverPhotoSrc": "/images/cat-claw/cover.png",
+      "images": [
+        "/images/cat-claw/detail1.png",
+        "/images/cat-claw/detail2.png"
+      ],
+      "category": [
+        "Comic"
+      ],
+      "description": "DJ Cat Claw finds herself in a desperate situation where she must either use her secret powers or see a loved one get hurt.",
+      "details": "48 pgs. Mahogany ink on French Paper 70#T Glo-tone Yellow Light. Hand-made record sleeve cover printed with Blue and Mahogany ink on French Paper 65#C Glo-tone Yellow Light. Edition of 50."
+    },
+    {
+      "name": "Foreman General: Issue One",
+      "slug": "foreman-general-one",
+      "author": "Gutierrez, Erik Schneider",
+      "quantity": 50,
+      "coverPhotoSrc": "/images/foreman-general-one/cover.png",
+      "images": [
+        "/images/foreman-general-one/detail1.png",
+        "/images/foreman-general-one/detail2.png"
+      ],
+      "category": [
+        "Comic"
+      ],
+      "description": "A spy infiltrates an enemy construction site.",
+      "details": "16 pgs. Blue ink on French Paper 70#T Glo-tone Orange Light. Edition of 50."
+    },
+    {
+      "name": "Danger! Villainous Monster!",
+      "slug": "danger-villainous-monster",
+      "author": "Roe, JB",
+      "quantity": 5,
+      "coverPhotoSrc": "/images/danger-villainous-monster/cover.png",
+      "images": [
+        "/images/danger-villainous-monster/detail1.png"
+      ],
+      "category": [
+        "Zine"
+      ],
+      "description": "Forty tokusatsu villains from shows like Kamen Rider, Barom 1, Himitsu Sentai Gorenger, and Spider-Man.",
+      "details": "40 pgs. Blue ink on French Paper 70#T Poptone Sweettooth. Edition of 100."
+    },
+    {
+      "name": "Handout Comics No. 5",
+      "slug": "handout-comics-v",
+      "author": "Various Artists",
+      "quantity": 0,
+      "coverPhotoSrc": "/images/handout-comics-v/cover.png",
+      "images": [
+        "/images/handout-comics-v/detail1.png",
+        "/images/handout-comics-v/detail2.png"
+      ],
+      "category": [
+        "Comic"
+      ],
+      "description": "The 2016 edition of a free minicomic featuring several Chicago-based artists.",
+      "details": "16 pgs. Blue, Yellow, and Red ink covers. Blue ink insides on French Paper 50#T Dur-O-Tone Newspaper White. Edition of 300."
+    },
+    {
+      "name": "Token 4: Jourdon",
+      "slug": "token-jourdon",
+      "author": "Gullett, Jourdon",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/jourdon.png",
+      "details": "Yellow and Black ink on French Paper 65#C Poptone Sweettooth"
+    },
+    {
+      "name": "Token 4: Henry",
+      "slug": "token-henry",
+      "author": "Guerra, Henry",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/henry.png",
+      "details": "Yellow and Black ink on French Paper 65#C Poptone Sweettooth"
+    },
+    {
+      "name": "Token 4: Gabi",
+      "slug": "token-gabi",
+      "author": "Cracraft, Gabi",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/gabi.png",
+      "details": "Yellow and Black ink on French Paper 65#C Poptone Sweettooth"
+    },
+    {
+      "name": "Token 4: Ali",
+      "slug": "token-ali",
+      "author": "Cantarella, Ali",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/ali.png",
+      "details": "Yellow and Black ink on French Paper 65#C Poptone Sweettooth"
+    },
+    {
+      "name": "Token 4: Victoria",
+      "slug": "token-victoria",
+      "author": "Perez-Segovia, Victoria",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/victoria.png",
+      "details": "Yellow and Black ink on French Paper 65#C Poptone Sweettooth"
+    },
+    {
+      "name": "Elote Pin",
+      "slug": "elote-pin",
+      "author": "Gutierrez, Christine",
+      "quantity": 20,
+      "category": [
+        "Pin"
+      ],
+      "coverPhotoSrc": "/images/elote-pin/cover.png",
+      "details": "4-Color Soft Enamel Pin"
+    },
+    {
+      "name": "Mexican Street Food Print Set",
+      "slug": "mexican-street-food",
+      "author": "Gutierrez, Christine",
+      "quantity": 10,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/mexican-street-food/cover.png",
+      "images": [
+        "/images/mexican-street-food/detail1.png",
+        "/images/mexican-street-food/detail2.png"
+      ],
+      "details": "Black, Blue, Yellow, and Bright Red faux-CMYK Risograph on French Paper 100#C Contruction Whitewash. Edition of 50."
+    },
+    {
+      "name": "Token 3: JB",
+      "slug": "token-jb",
+      "author": "Roe, JB",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/jb.png",
+      "details": "Yellow and Black ink on French Paper 80#C Construction Whitewash"
+    },
+    {
+      "name": "Token 3: Sage",
+      "slug": "token-sage",
+      "author": "Coffey, Sage",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/sage.png",
+      "details": "Yellow and Black ink on French Paper 80#C Construction Whitewash"
+    },
+    {
+      "name": "Token 3: Yewon",
+      "slug": "token-Yewon",
+      "author": "Kwon, Yewon",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/yewon.png",
+      "details": "Yellow and Black ink on French Paper 80#C Construction Whitewash"
+    },
+    {
       "name": "Still Guilty",
       "slug": "still-guilty",
-      "author": "Erik Schneider",
+      "author": "Gutierrez, Erik Schneider",
+      "quantity": 10,
       "coverPhotoSrc": "/images/still-guilty/cover.png",
       "images": [
         "/images/still-guilty/detail1.png",
@@ -16,23 +226,10 @@
       "details": "12 pgs. Black and Mahagony ink on French Paper 70#T Poptone Sweettooth. Edition of 100."
     },
     {
-      "name": "Help!",
-      "slug": "help",
-      "author": "Christine Gutierrez",
-      "coverPhotoSrc": "/images/help/cover.png",
-      "images": [
-        "/images/help/detail1.png"
-      ],
-      "category": [
-        "Zine"
-      ],
-      "description": "Help your community grow, achieve, learn, and build! It's amazing what a helping hand can do.",
-      "details": "8 pgs. Black and Mahagony ink on French Paper 70#T Poptone Sweettooth. Edition of 50."
-    },
-    {
       "name": "Hecho en Mexico",
       "slug": "hecho-en-mexico",
-      "author": "Christine Gutierrez",
+      "author": "Gutierrez, Christine",
+      "quantity": 10,
       "category": [
         "Print"
       ],
@@ -42,7 +239,8 @@
     {
       "name": "Flying Trash",
       "slug": "flying-trash",
-      "author": "Erik Schneider",
+      "author": "Gutierrez, Erik Schneider",
+      "quantity": 10,
       "coverPhotoSrc": "/images/flying-trash/cover.png",
       "images": [
         "/images/flying-trash/detail1.png",
@@ -55,9 +253,80 @@
       "details": "28 pgs. Green ink on French Paper 70#T Pop-Tone Banana Split. Edition of 55."
     },
     {
+      "name": "Token 2: Javier",
+      "slug": "token-javier",
+      "author": "Suarez, Javier",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/javier.png",
+      "details": "Yellow and Black ink on French Paper 80#C Construction Whitewash"
+    },
+    {
+      "name": "Token 2: Lane",
+      "slug": "token-lane",
+      "author": "Fujita, Lane",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/lane.png",
+      "details": "Yellow and Black ink on French Paper 80#C Construction Whitewash"
+    },
+    {
+      "name": "Token 2: Bianca",
+      "slug": "token-bianca",
+      "author": "Xunise, Bianca",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/bianca.png",
+      "details": "Yellow and Black ink on French Paper 80#C Construction Whitewash"
+    },
+    {
+      "name": "Token 2: John",
+      "slug": "token-john",
+      "author": "Bailey, John",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/john.png",
+      "details": "Yellow and Black ink on French Paper 80#C Construction Whitewash"
+    },
+    {
+      "name": "Token 2: Zelda",
+      "slug": "token-zelda",
+      "author": "Galewsky, Zelda",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/zelda.png",
+      "details": "Yellow and Black ink on French Paper 80#C Construction Whitewash"
+    },
+    {
+      "name": "Help!",
+      "slug": "help",
+      "author": "Gutierrez, Christine",
+      "quantity": 10,
+      "coverPhotoSrc": "/images/help/cover.png",
+      "images": [
+        "/images/help/detail1.png"
+      ],
+      "category": [
+        "Zine"
+      ],
+      "description": "Help your community grow, achieve, learn, and build! It's amazing what a helping hand can do.",
+      "details": "8 pgs. Black and Mahagony ink on French Paper 70#T Poptone Sweettooth. Edition of 50."
+    },
+    {
       "name": "The Dead Sound",
       "slug": "dead-sound",
-      "author": ["Tim Beard", "Dave Scheidt"],
+      "author": ["Beard, Tim", "Scheidt, Dave"],
+      "quantity": 10,
       "coverPhotoSrc": "/images/dead-sound/cover.png",
       "images": [
         "/images/dead-sound/detail1.png",
@@ -72,7 +341,8 @@
     {
       "name": "Shots",
       "slug": "shots",
-      "author": "Jacob Halton",
+      "author": "Halton, Jacob",
+      "quantity": 10,
       "coverPhotoSrc": "/images/shots/cover.png",
       "images": [
         "/images/shots/detail1.png"
@@ -86,7 +356,8 @@
     {
       "name": "Trade-Off",
       "slug": "trade-off",
-      "author": "Christine Gutierrez",
+      "author": "Gutierrez, Christine",
+      "quantity": 10,
       "coverPhotoSrc": "/images/trade-off/cover.png",
       "images": [
         "/images/trade-off/detail1.png",
@@ -101,7 +372,8 @@
     {
       "name": "Whitey's Woods",
       "slug": "whiteys-woods",
-      "author": "Erik Schneider",
+      "author": "Gutierrez, Erik Schneider",
+      "quantity": 10,
       "category": [
         "Print"
       ],
@@ -112,7 +384,8 @@
     {
       "name": "Nothing Special",
       "slug": "nothing-special",
-      "author": "Lane Fujita",
+      "author": "Fujita, Lane",
+      "quantity": 0,
       "coverPhotoSrc": "/images/nothing-special/cover.png",
       "images": [
         "/images/nothing-special/detail1.png",
@@ -128,6 +401,7 @@
       "name": "Handout Comics No. 4",
       "slug": "handout-comics-iv",
       "author": "Various Artists",
+      "quantity": 0,
       "coverPhotoSrc": "/images/handout-comics-iv/cover.png",
       "images": [
         "/images/handout-comics-iv/detail1.png",
@@ -140,9 +414,65 @@
       "details": "32 pgs. Black ink on French Paper 50#T Dur-O-Tone Newspaper Aged. Edition of 300."
     },
     {
+      "name": "Token 1: Shea",
+      "slug": "token-shea",
+      "author": "Cahill, Shea",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/shea.png",
+      "details": "Yellow and Black ink on French Paper 80#C Construction Whitewash"
+    },
+    {
+      "name": "Token 1: Armani",
+      "slug": "token-armani",
+      "author": "Barron, Armani",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/armani.png",
+      "details": "Yellow and Black ink on French Paper 80#C Construction Whitewash"
+    },
+    {
+      "name": "Token 1: Christine",
+      "slug": "token-christine",
+      "author": "Gutierrez, Christine",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/christine.png",
+      "details": "Yellow and Black ink on French Paper 80#C Construction Whitewash"
+    },
+    {
+      "name": "Token 1: Erik",
+      "slug": "token-erik",
+      "author": "Gutierrez, Erik Schneider",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/erik.png",
+      "details": "Yellow and Black ink on French Paper 80#C Construction Whitewash"
+    },
+    {
+      "name": "Token 1: Adrian",
+      "slug": "token-adrian",
+      "author": "Quintero, Adrian",
+      "quantity": 20,
+      "category": [
+        "Print"
+      ],
+      "coverPhotoSrc": "/images/tokens/adrian.png",
+      "details": "Yellow and Black ink on French Paper 80#C Construction Whitewash"
+    },
+    {
       "name": "Nordhouse",
       "slug": "nordhouse",
-      "author": "Erik Schneider",
+      "author": "Gutierrez, Erik Schneider",
+      "quantity": 2,
       "coverPhotoSrc": "/images/nordhouse/cover.png",
       "images": [
         "/images/nordhouse/detail1.png",
@@ -157,7 +487,8 @@
     {
       "name": "To-Do",
       "slug": "to-do",
-      "author": "Erik Schneider",
+      "author": "Gutierrez, Erik Schneider",
+      "quantity": 10,
       "coverPhotoSrc": "/images/to-do/cover.png",
       "images": [
         "/images/to-do/detail1.png",

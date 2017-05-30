@@ -1,15 +1,8 @@
 .product-listing {
-	@include column-gap(lh(2));
-
-	@media (min-width: $mq-small) {
-		@include column-count(2);
-	}
-
-	@media (min-width: $mq-medium) {
-		@include column-count(3);
-	}
-
-	@media (min-width: $mq-large) {
-		@include column-count(4);
-	}
+	width: 100%;
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: lh(-1);
+	margin-right: lh(-1);
 }

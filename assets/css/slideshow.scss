@@ -12,7 +12,7 @@
   }
 
   .slideshow__image {
-    height: 600px; 
+    height: 500px; 
     width: auto;
     max-width: 100%;
     margin-left: auto;
@@ -36,10 +36,10 @@
   }
 
   .slideshow__previous {
-    left: lh(2);
+    left: lh(1);
   }
 
   .slideshow__next {
-    right: lh(2);
+    right: lh(1);
   }
 }

@@ -19,18 +19,35 @@
 
       <section class="main-section">
         <div class="product-page">
-          <div class="product-page__images">
-            <img class="product-page__image" src="/images/handout-comics-v/cover.png" />
-              <img class="product-page__image" src="/images/handout-comics-v/detail1.png" />
-              <img class="product-page__image" src="/images/handout-comics-v/detail2.png" />
+        	<div class="product-page__slideshow slideshow">
+        		<input type="radio" name="slide" id="slideshow__item--default" checked="checked" class="slideshow__item-input" />
+        		<div class="slideshow__item">
+        			<img class="slideshow__image" src="/images/handout-comics-v/cover.png" />
+        				<label for="slideshow__item--0" class="slideshow__next">→</label>
+        		</div>
+
+        			<input type="radio" name="slide" id="slideshow__item--0" class="slideshow__item-input" />
+        			<div class="slideshow__item">
+        				<img class="slideshow__image" src="/images/handout-comics-v/detail1.png" />
+        					<label for="slideshow__item--default" class="slideshow__previous">←</label>
+        					<label for="slideshow__item--1" class="slideshow__next">→</label>
+        			</div>
+        			<input type="radio" name="slide" id="slideshow__item--1" class="slideshow__item-input" />
+        			<div class="slideshow__item">
+        				<img class="slideshow__image" src="/images/handout-comics-v/detail2.png" />
+        					<label for="slideshow__item--0" class="slideshow__previous">←</label>
+        			</div>
           </div>
 
           <div class="product-page__overview">
-            <h1 class="product-page__title">Handout Comics No. 5</h1>
-            <p class="product-page__author">Various Artists</p>
-            <p class="product-page__description">The 2016 edition of a free minicomic featuring several Chicago-based artists.</p>
-            <p class="product-page__details">16 pgs. Blue, Yellow, and Red ink covers. Blue ink insides on French Paper 50#T Dur-O-Tone Newspaper White. Edition of 300.</p>
+        		<div class="product-page__content">
+        			<h1 class="product-page__title">Handout Comics No. 5</h1>
+        			<p class="product-page__author"> Various Artists</p>
+        			<p class="product-page__description">The 2016 edition of a free minicomic featuring several Chicago-based artists.</p>
+        			<p class="product-page__details">16 pgs. Blue, Yellow, and Red ink covers. Blue ink insides on French Paper 50#T Dur-O-Tone Newspaper White. Edition of 300.</p>
+        		</div>
           </div>
+
         </div>
       </section>
     </div>

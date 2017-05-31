@@ -19,18 +19,35 @@
 
       <section class="main-section">
         <div class="product-page">
-          <div class="product-page__images">
-            <img class="product-page__image" src="/images/mexican-street-food/cover.png" />
-              <img class="product-page__image" src="/images/mexican-street-food/detail1.png" />
-              <img class="product-page__image" src="/images/mexican-street-food/detail2.png" />
+        	<div class="product-page__slideshow slideshow">
+        		<input type="radio" name="slide" id="slideshow__item--default" checked="checked" class="slideshow__item-input" />
+        		<div class="slideshow__item">
+        			<img class="slideshow__image" src="/images/mexican-street-food/cover.png" />
+        				<label for="slideshow__item--0" class="slideshow__next">→</label>
+        		</div>
+
+        			<input type="radio" name="slide" id="slideshow__item--0" class="slideshow__item-input" />
+        			<div class="slideshow__item">
+        				<img class="slideshow__image" src="/images/mexican-street-food/detail1.png" />
+        					<label for="slideshow__item--default" class="slideshow__previous">←</label>
+        					<label for="slideshow__item--1" class="slideshow__next">→</label>
+        			</div>
+        			<input type="radio" name="slide" id="slideshow__item--1" class="slideshow__item-input" />
+        			<div class="slideshow__item">
+        				<img class="slideshow__image" src="/images/mexican-street-food/detail2.png" />
+        					<label for="slideshow__item--0" class="slideshow__previous">←</label>
+        			</div>
           </div>
 
           <div class="product-page__overview">
-            <h1 class="product-page__title">Mexican Street Food Print Set</h1>
-            <p class="product-page__author">Gutierrez, Christine</p>
-            <p class="product-page__description"></p>
-            <p class="product-page__details">Black, Blue, Yellow, and Bright Red faux-CMYK Risograph on French Paper 100#C Contruction Whitewash. Edition of 50.</p>
+        		<div class="product-page__content">
+        			<h1 class="product-page__title">Mexican Street Food Print Set</h1>
+        			<p class="product-page__author">Christine Gutierrez</p>
+        			<p class="product-page__description"></p>
+        			<p class="product-page__details">Black, Blue, Yellow, and Bright Red faux-CMYK Risograph on French Paper 100#C Contruction Whitewash. Edition of 50.</p>
+        		</div>
           </div>
+
         </div>
       </section>
     </div>

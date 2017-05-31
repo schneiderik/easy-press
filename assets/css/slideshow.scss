@@ -1,0 +1,45 @@
+.slideshow {
+  position: relative;
+  text-align: center;
+
+  .slideshow__item,
+  .slideshow__item-input {
+    display: none;
+  }
+
+  .slideshow__item-input:checked + .slideshow__item {
+    display: block;
+  }
+
+  .slideshow__image {
+    height: 600px; 
+    width: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+  }
+
+  .slideshow__previous,
+  .slideshow__next {
+    color: $white;
+    background-color: $black;
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    font-size: 24px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+  }
+
+  .slideshow__previous {
+    left: lh(2);
+  }
+
+  .slideshow__next {
+    right: lh(2);
+  }
+}

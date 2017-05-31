@@ -19,17 +19,29 @@
 
       <section class="main-section">
         <div class="product-page">
-          <div class="product-page__images">
-            <img class="product-page__image" src="/images/danger-villainous-monster/cover.png" />
-              <img class="product-page__image" src="/images/danger-villainous-monster/detail1.png" />
+        	<div class="product-page__slideshow slideshow">
+        		<input type="radio" name="slide" id="slideshow__item--default" checked="checked" class="slideshow__item-input" />
+        		<div class="slideshow__item">
+        			<img class="slideshow__image" src="/images/danger-villainous-monster/cover.png" />
+        				<label for="slideshow__item--0" class="slideshow__next">→</label>
+        		</div>
+
+        			<input type="radio" name="slide" id="slideshow__item--0" class="slideshow__item-input" />
+        			<div class="slideshow__item">
+        				<img class="slideshow__image" src="/images/danger-villainous-monster/detail1.png" />
+        					<label for="slideshow__item--default" class="slideshow__previous">←</label>
+        			</div>
           </div>
 
           <div class="product-page__overview">
-            <h1 class="product-page__title">Danger! Villainous Monster!</h1>
-            <p class="product-page__author">Roe, JB</p>
-            <p class="product-page__description">Forty tokusatsu villains from shows like Kamen Rider, Barom 1, Himitsu Sentai Gorenger, and Spider-Man.</p>
-            <p class="product-page__details">40 pgs. Blue ink on French Paper 70#T Poptone Sweettooth. Edition of 100.</p>
+        		<div class="product-page__content">
+        			<h1 class="product-page__title">Danger! Villainous Monster!</h1>
+        			<p class="product-page__author">JB Roe</p>
+        			<p class="product-page__description">Forty tokusatsu villains from shows like Kamen Rider, Barom 1, Himitsu Sentai Gorenger, and Spider-Man.</p>
+        			<p class="product-page__details">40 pgs. Blue ink on French Paper 70#T Poptone Sweettooth. Edition of 100.</p>
+        		</div>
           </div>
+
         </div>
       </section>
     </div>

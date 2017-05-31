@@ -60,7 +60,7 @@ img {
   width: auto;
   position: relative;
   top: 0.6472rem;
-  left: -1.2135rem; }
+  left: -0.809rem; }
 
 .main-header__link {
   font-size: 24px;
@@ -217,27 +217,75 @@ img {
       top: 2px;
       left: 5px; }
 
-.product-page {
-  width: 100%;
-  display: flex;
-  margin-left: -1.618rem;
-  margin-right: -1.618rem; }
-  .product-page .product-page__overview {
-    flex: 0 0 50%;
-    padding-left: 1.618rem;
-    padding-right: 1.618rem; }
-  .product-page .product-page__images {
-    flex: 0 0 50%;
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    padding-left: 1.618rem;
-    padding-right: 1.618rem;
-    position: relative;
-    text-align: center; }
-  .product-page .product-page__image {
-    z-index: 1;
+.product-page .product-page__overview,
+.product-page .product-page__slideshow {
+  width: 100%; }
+
+.product-page .product-page__content {
+  max-width: 500px;
+  margin: auto; }
+
+.product-page .product-page__slideshow {
+  margin-bottom: 3.236rem; }
+
+.product-page .product-page__title {
+  font-size: 24px;
+  line-height: 1.618; }
+
+.product-page .product-page__details {
+  font-size: 15px;
+  color: #AAA; }
+
+@media (min-width: 1200px) {
+  .product-page {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: -1.618rem;
+    margin-right: -1.618rem; }
+    .product-page .product-page__overview,
+    .product-page .product-page__slideshow {
+      width: 100%;
+      flex: 0 0 50%;
+      padding-left: 1.618rem;
+      padding-right: 1.618rem; }
+    .product-page .product-page__overview {
+      order: 2; }
+    .product-page .product-page__content {
+      margin: 0; }
+    .product-page .product-page__slideshow {
+      order: 1;
+      top: -0.809rem; } }
+
+.slideshow {
+  position: relative;
+  text-align: center; }
+  .slideshow .slideshow__item,
+  .slideshow .slideshow__item-input {
+    display: none; }
+  .slideshow .slideshow__item-input:checked + .slideshow__item {
+    display: block; }
+  .slideshow .slideshow__image {
+    height: 600px;
     width: auto;
     max-width: 100%;
-    max-height: 700px;
-    margin-bottom: 1.618rem; }
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain; }
+  .slideshow .slideshow__previous,
+  .slideshow .slideshow__next {
+    color: #FFF;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    font-size: 24px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 50%; }
+  .slideshow .slideshow__previous {
+    left: 3.236rem; }
+  .slideshow .slideshow__next {
+    right: 3.236rem; }

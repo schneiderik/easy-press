@@ -3,17 +3,38 @@ pageName: shop
 ---
 
 <div class="product-page">
-  <div class="product-page__images">
-    <img class="product-page__image" src="{{coverPhotoSrc}}" /> 
-    {{#each images}}
-      <img class="product-page__image" src="{{this}}" /> 
-    {{/each}}
+	<div class="product-page__slideshow slideshow">
+		<input type="radio" name="slide" id="slideshow__item--default" checked="checked" class="slideshow__item-input" />
+		<div class="slideshow__item">
+			<img class="slideshow__image" src="{{coverPhotoSrc}}" /> 
+			{{#if images}}
+				<label for="slideshow__item--0" class="slideshow__next">→</label>
+			{{/if}}
+		</div>
+
+		{{#each images}}
+			<input type="radio" name="slide" id="slideshow__item--{{@index}}" class="slideshow__item-input" />
+			<div class="slideshow__item">
+				<img class="slideshow__image" src="{{this}}" /> 
+				{{#if @first}}
+					<label for="slideshow__item--default" class="slideshow__previous">←</label>
+				{{else}}
+					<label for="slideshow__item--{{decrement @index}}" class="slideshow__previous">←</label>
+				{{/if}}
+				{{#unless @last}}
+					<label for="slideshow__item--{{increment @index}}" class="slideshow__next">→</label>
+				{{/unless}}
+			</div>
+		{{/each}}
   </div>
 
   <div class="product-page__overview">
-    <h1 class="product-page__title">{{name}}</h1>
-    <p class="product-page__author">{{author}}</p>
-    <p class="product-page__description">{{description}}</p>
-    <p class="product-page__details">{{details}}</p>
+		<div class="product-page__content">
+			<h1 class="product-page__title">{{name}}</h1>
+			<p class="product-page__author">{{formatAuthor author}}</p>
+			<p class="product-page__description">{{description}}</p>
+			<p class="product-page__details">{{details}}</p>
+		</div>
   </div>
+
 </div>

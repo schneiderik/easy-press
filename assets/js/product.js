@@ -1,28 +1,9 @@
 import React from 'react';
+import helpers from './../../lib/handlebars-helpers';
 
 class Product extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  formatAuthor() {
-		let format = function (author) {
-			let first, last;
-
-			[last, first] = author.split(', ');
-
-			return [first, last].join(' ');
-		};
-
-    if (Array.isArray(this.props.author)) {
-      let authors = this.props.author.map(a => {
-				return format(a);
-			});
-			
-			return authors.join(', ');
-    } else {
-      return format(this.props.author);
-    }
   }
 
   render() {
@@ -32,7 +13,7 @@ class Product extends React.Component {
 					<img className="product__image" src={this.props.coverSrc} />
 				</div>
 				<h1 className="product__title">{this.props.title}</h1>
-				<p className="product__author">{this.formatAuthor()}</p>
+				<p className="product__author">{helpers.formatAuthor(this.props.author)}</p>
       </a>
     );
   }

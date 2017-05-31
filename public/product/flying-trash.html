@@ -19,18 +19,35 @@
 
       <section class="main-section">
         <div class="product-page">
-          <div class="product-page__images">
-            <img class="product-page__image" src="/images/flying-trash/cover.png" />
-              <img class="product-page__image" src="/images/flying-trash/detail1.png" />
-              <img class="product-page__image" src="/images/flying-trash/detail2.png" />
+        	<div class="product-page__slideshow slideshow">
+        		<input type="radio" name="slide" id="slideshow__item--default" checked="checked" class="slideshow__item-input" />
+        		<div class="slideshow__item">
+        			<img class="slideshow__image" src="/images/flying-trash/cover.png" />
+        				<label for="slideshow__item--0" class="slideshow__next">→</label>
+        		</div>
+
+        			<input type="radio" name="slide" id="slideshow__item--0" class="slideshow__item-input" />
+        			<div class="slideshow__item">
+        				<img class="slideshow__image" src="/images/flying-trash/detail1.png" />
+        					<label for="slideshow__item--default" class="slideshow__previous">←</label>
+        					<label for="slideshow__item--1" class="slideshow__next">→</label>
+        			</div>
+        			<input type="radio" name="slide" id="slideshow__item--1" class="slideshow__item-input" />
+        			<div class="slideshow__item">
+        				<img class="slideshow__image" src="/images/flying-trash/detail2.png" />
+        					<label for="slideshow__item--0" class="slideshow__previous">←</label>
+        			</div>
           </div>
 
           <div class="product-page__overview">
-            <h1 class="product-page__title">Flying Trash</h1>
-            <p class="product-page__author">Gutierrez, Erik Schneider</p>
-            <p class="product-page__description">A couple of minutes in the life of an average seagull that end up cooler than expected.</p>
-            <p class="product-page__details">28 pgs. Green ink on French Paper 70#T Pop-Tone Banana Split. Edition of 55.</p>
+        		<div class="product-page__content">
+        			<h1 class="product-page__title">Flying Trash</h1>
+        			<p class="product-page__author">Erik Schneider Gutierrez</p>
+        			<p class="product-page__description">A couple of minutes in the life of an average seagull that end up cooler than expected.</p>
+        			<p class="product-page__details">28 pgs. Green ink on French Paper 70#T Pop-Tone Banana Split. Edition of 55.</p>
+        		</div>
           </div>
+
         </div>
       </section>
     </div>

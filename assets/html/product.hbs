@@ -6,24 +6,42 @@ pageName: shop
 	<div class="product-page__slideshow slideshow">
 		<input type="radio" name="slide" id="slideshow__item--default" checked="checked" class="slideshow__item-input" />
 		<div class="slideshow__item">
-			<img class="slideshow__image" src="{{coverPhotoSrc}}" /> 
 			{{#if images}}
+				<label for="slideshow__item--0">
+					<img class="slideshow__image" src="{{coverPhotoSrc}}" /> 
+				</label>
+
+				<label for="slideshow__item--{{decrement (length images)}}" class="slideshow__previous">←</label>
 				<label for="slideshow__item--0" class="slideshow__next">→</label>
+			{{else}}
+				<img class="slideshow__image" src="{{coverPhotoSrc}}" /> 
 			{{/if}}
 		</div>
 
 		{{#each images}}
 			<input type="radio" name="slide" id="slideshow__item--{{@index}}" class="slideshow__item-input" />
 			<div class="slideshow__item">
-				<img class="slideshow__image" src="{{this}}" /> 
+				{{#if @last}}
+					<label for="slideshow__item--default">
+						<img class="slideshow__image" src="{{this}}" />
+					</label>
+				{{else}}
+					<label for="slideshow__item--{{increment @index}}">
+						<img class="slideshow__image" src="{{this}}" /> 
+					</label>
+				{{/if}}
+
 				{{#if @first}}
 					<label for="slideshow__item--default" class="slideshow__previous">←</label>
 				{{else}}
 					<label for="slideshow__item--{{decrement @index}}" class="slideshow__previous">←</label>
 				{{/if}}
-				{{#unless @last}}
+
+				{{#if @last}}
+					<label for="slideshow__item--default" class="slideshow__next">→</label>
+				{{else}}
 					<label for="slideshow__item--{{increment @index}}" class="slideshow__next">→</label>
-				{{/unless}}
+				{{/if}}
 			</div>
 		{{/each}}
   </div>

@@ -42,13 +42,10 @@
       order: 2;
     }
 
-		.product-page__content{
-			margin: 0;
-		}
-
     .product-page__slideshow {
       order: 1;
       top: lh(-0.5);
+			margin-bottom: 0;
     }
   }
 }

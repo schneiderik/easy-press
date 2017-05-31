@@ -75,8 +75,8 @@ img {
     color: #000; }
 
 .main-section {
-  padding-top: 4.854rem;
-  padding-bottom: 3.236rem;
+  padding-top: 3.236rem;
+  padding-bottom: 1.618rem;
   padding-left: 3.236rem;
   padding-right: 3.236rem; }
 
@@ -251,11 +251,10 @@ img {
       padding-right: 1.618rem; }
     .product-page .product-page__overview {
       order: 2; }
-    .product-page .product-page__content {
-      margin: 0; }
     .product-page .product-page__slideshow {
       order: 1;
-      top: -0.809rem; } }
+      top: -0.809rem;
+      margin-bottom: 0; } }
 
 .slideshow {
   position: relative;

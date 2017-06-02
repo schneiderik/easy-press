@@ -12,12 +12,16 @@
   }
 
   .slideshow__image {
-    height: 500px; 
+    height: 300px; 
     width: auto;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     object-fit: contain;
+
+    @media (min-width: $mq-medium) {
+      height: 500px; 
+    }
   }
 
   .slideshow__previous,
@@ -36,10 +40,18 @@
   }
 
   .slideshow__previous {
-    left: lh(1);
+    left: lh(-0.8);
+
+    @media (min-width: $mq-medium) {
+      left: lh(1);
+    }
   }
 
   .slideshow__next {
-    right: lh(1);
+    right: lh(-0.8);
+
+    @media (min-width: $mq-medium) {
+      right: lh(1);
+    }
   }
 }

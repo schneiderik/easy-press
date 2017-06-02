@@ -3,6 +3,15 @@ pageName: shop
 ---
 
 <div class="product-page">
+  <div class="product-page__overview">
+		<div class="product-page__content">
+			<h1 class="product-page__title">{{name}}</h1>
+			<p class="product-page__author">{{formatAuthor author}}</p>
+			<p class="product-page__description">{{description}}</p>
+			<p class="product-page__details">{{details}}</p>
+		</div>
+  </div>
+
 	<div class="product-page__slideshow slideshow">
 		<input type="radio" name="slide" id="slideshow__item--default" checked="checked" class="slideshow__item-input" />
 		<div class="slideshow__item">
@@ -45,14 +54,4 @@ pageName: shop
 			</div>
 		{{/each}}
   </div>
-
-  <div class="product-page__overview">
-		<div class="product-page__content">
-			<h1 class="product-page__title">{{name}}</h1>
-			<p class="product-page__author">{{formatAuthor author}}</p>
-			<p class="product-page__description">{{description}}</p>
-			<p class="product-page__details">{{details}}</p>
-		</div>
-  </div>
-
 </div>

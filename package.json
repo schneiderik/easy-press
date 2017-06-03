@@ -43,6 +43,7 @@
     "onchange": "^1.1.0",
     "phantomjs": "^1.9.17",
     "prop-types": "^15.5.10",
+    "react-lazy-load": "^3.0.12",
     "sinon": "^1.15.4",
     "sinon-chai": "^2.8.0",
     "taft": "^0.4.12",

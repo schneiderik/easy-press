@@ -11,7 +11,7 @@ class Product extends React.Component {
     return (
       <a className="product" href={'/product/' + this.props.slug}>
 				<div className="product__image-container">
-					<LazyLoad offset={1000}>
+					<LazyLoad offset={1000} debounce={false}>
 						<img className="product__image" src={this.props.coverSrc} />
 					</LazyLoad>
 				</div>

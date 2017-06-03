@@ -19,7 +19,7 @@
     margin-right: auto;
     object-fit: contain;
 
-    @media (min-width: $mq-medium) {
+    @media (min-width: $mq-small) {
       height: 500px; 
     }
   }
@@ -42,7 +42,7 @@
   .slideshow__previous {
     left: lh(-0.8);
 
-    @media (min-width: $mq-medium) {
+    @media (min-width: $mq-xsmall) {
       left: lh(1);
     }
   }
@@ -50,7 +50,7 @@
   .slideshow__next {
     right: lh(-0.8);
 
-    @media (min-width: $mq-medium) {
+    @media (min-width: $mq-xsmall) {
       right: lh(1);
     }
   }

@@ -2,9 +2,18 @@
   <a href="/" class="main-header__link">
     <img class="main-header__logo" src="/images/easy-logo.svg" alt="Easy Press Logo" /> 
   </a>
-  <nav class="main-header__navigation">
-    <a href="/" class="main-header__link {{activePage 'shop' pageName}}">Products</a>
-    <a href="/about" class="main-header__link {{activePage 'about' pageName}}">About</a>
-    <!-- <span id="cart-link" class="main-header__link"></span> -->
-  </nav>
+	<input type="checkbox" id="main-header__mobile-toggle-input" name="mobile-toggle" />
+	<div class="main-header__mobile-toggle-container">
+		<label class="main-header__mobile-toggle" for="main-header__mobile-toggle-input">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</label>
+		<nav class="main-header__navigation">
+			<a href="/" class="main-header__link {{activePage 'shop' pageName}}">Products</a>
+			<a href="/about" class="main-header__link {{activePage 'about' pageName}}">About</a>
+			<!-- <span id="cart-link" class="main-header__link"></span> -->
+		</nav>
+	</div>
 </header>

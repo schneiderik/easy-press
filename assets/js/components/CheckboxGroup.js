@@ -1,5 +1,6 @@
 import React from 'react';
-import CheckboxInput from './checkbox-input.js';
+import CheckboxInput from './CheckboxInput';
+import utils from './../utils';
 
 class CheckboxGroup extends React.Component {
   constructor(props) {
@@ -8,8 +9,12 @@ class CheckboxGroup extends React.Component {
     this.handleCheckboxInputChange = this.handleCheckboxInputChange.bind(this);
   }
 
-  handleCheckboxInputChange(value, isChecked, name) {
-    this.props.onChange(value, isChecked, name);
+  handleCheckboxInputChange(name, value, checked) {
+    let checkedValues = checked
+      ? utils.array.uniq([...this.props.checkedValues, value])
+      : utils.array.remove(this.props.checkedValues, value);
+
+    this.props.onChange(name, checkedValues);
   }
 
   createId(name, value) {
@@ -23,7 +28,7 @@ class CheckboxGroup extends React.Component {
         id={this.createId(this.props.name, value)}
         name={this.props.name}
         value={value}
-        isChecked={this.props.checkedValues.includes(value)}
+        checked={this.props.checkedValues.includes(value)}
         onChange={this.handleCheckboxInputChange}
       />
     ));

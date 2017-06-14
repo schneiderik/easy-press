@@ -22,7 +22,7 @@
       		<nav class="main-header__navigation">
       			<a href="/" class="main-header__link active">Products</a>
       			<a href="/about" class="main-header__link ">About</a>
-      			<!-- <span id="cart-link" class="main-header__link"></span> -->
+      			<span id="cart-link" class="main-header__link "></span>
       		</nav>
       	</div>
       </header>
@@ -35,15 +35,21 @@
         			<p class="product-page__author">Bianca Xunise</p>
         			<p class="product-page__description"></p>
         			<p class="product-page__details">Yellow and Black ink on French Paper 80#C Construction Whitewash</p>
+        			<div id="add-to-cart-link" data-slug="token-bianca"></div>
         		</div>
           </div>
 
-        	<div class="product-page__slideshow slideshow">
-        		<input type="radio" name="slide" id="slideshow__item--default" checked="checked" class="slideshow__item-input" />
-        		<div class="slideshow__item">
-        				<img class="slideshow__image" src="/images/tokens/bianca.png" />
-        		</div>
+        	<div class="product-page__slideshow">
+            <div class="slideshow">
+                <input type="radio" name="slide" checked="checked" id="slideshow__item--0" class="slideshow__item-input" />
+                <div class="slideshow__item">
+                    <label for="slideshow__item--0">
+                      <img class="slideshow__image" src="/images/tokens/bianca.png" />
+                    </label>
 
+
+                </div>
+            </div>
           </div>
         </div>
       </section>

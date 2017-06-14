@@ -2,6 +2,7 @@
 @import 'variables';
 @import 'mixins';
 @import 'global';
+@import 'about';
 @import 'main-header';
 @import 'main-section';
 @import 'main-footer';
@@ -15,3 +16,10 @@
 @import 'checkbox-input';
 @import 'product-page';
 @import 'slideshow';
+@import 'cart';
+@import 'add-to-cart-link';
+@import 'cart-link';
+@import 'cart-item-listing';
+@import 'cart-item';
+@import 'cart-header';
+@import 'cart-footer';

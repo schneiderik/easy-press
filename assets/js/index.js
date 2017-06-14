@@ -1,22 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CartLink from './cart-link';
-import ProductBrowser from './product-browser';
-import data from './../../data/data.json';
+import ProductBrowser from './components/ProductBrowser';
+import cartSystem from './cart-system';
 
 const productBrowserContainer = document.getElementById('product-browser');
-const cartLinkContainer = document.getElementById('cart-link');
 
 if (productBrowserContainer) {
   ReactDOM.render(
-    <ProductBrowser products={data.products} />,
+    <ProductBrowser />,
     productBrowserContainer
   );
 }
 
-if (cartLinkContainer) {
-  ReactDOM.render(
-    <CartLink />,
-    document.getElementById('cart-link')
-  );
-}
+cartSystem();

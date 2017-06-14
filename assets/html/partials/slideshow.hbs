@@ -1,0 +1,32 @@
+<div class="slideshow">
+  {{#each images}}
+    <input type="radio" name="slide" {{#if @first}}checked="checked"{{/if}} id="slideshow__item--{{@index}}" class="slideshow__item-input" />
+    <div class="slideshow__item">
+      {{#if @last}}
+        <label for="slideshow__item--0">
+          <img class="slideshow__image" src="{{this}}" />
+        </label>
+      {{else}}
+        <label for="slideshow__item--{{increment @index}}">
+          <img class="slideshow__image" src="{{this}}" /> 
+        </label>
+      {{/if}}
+
+      {{#if @first}}
+        {{#unless @last}}
+          <label for="slideshow__item--{{decrement ../images.length}}" class="slideshow__previous">←</label>
+        {{/unless}}
+      {{else}}
+        <label for="slideshow__item--{{decrement @index}}" class="slideshow__previous">←</label>
+      {{/if}}
+
+      {{#if @last}}
+        {{#unless @first}}
+          <label for="slideshow__item--0" class="slideshow__next">→</label>
+        {{/unless}}
+      {{else}}
+        <label for="slideshow__item--{{increment @index}}" class="slideshow__next">→</label>
+      {{/if}}
+    </div>
+  {{/each}}
+</div>

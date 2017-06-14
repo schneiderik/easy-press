@@ -9,10 +9,8 @@ class CheckboxInput extends React.Component {
 
   handleChange(e) {
     const target = e.target;
-    const value = target.value;
-    const checked = target.checked;
 
-    this.props.onChange(value, checked, this.props.name);
+    this.props.onChange(this.props.name, target.value, target.checked);
   }
 
   render() {
@@ -25,7 +23,7 @@ class CheckboxInput extends React.Component {
             id={this.props.id}
             name={this.props.name} 
             value={this.props.value}
-            checked={this.props.isChecked}
+            checked={this.props.checked}
             onChange={this.handleChange}
           />
           {this.props.label}

@@ -40,6 +40,11 @@
 		color: #000;
 	}
 
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
 	@media (min-width: $mq-small) {
 		&:not(:last-child) {
 			margin-right: lh(2);

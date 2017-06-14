@@ -1,0 +1,20 @@
+.cart-footer {
+  text-align: right;
+
+  .cart-footer__shipping-cost {
+    margin-bottom: lh(0.5);
+
+    span {
+      margin-right: lh(0.5);
+      font-weight: 800;
+    }
+  }
+
+  .cart-footer__total-price {
+    font-weight: 800;
+
+    span {
+      margin-right: lh(0.5);
+    }
+  }
+}

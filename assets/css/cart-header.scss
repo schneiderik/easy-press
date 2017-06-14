@@ -1,0 +1,12 @@
+.cart__header {
+  padding-bottom: lh(0.5);
+  margin-bottom: lh(0.5);
+  border-bottom: 1px solid $black;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  .cart-header__title {
+    font-size: 24px;
+  }
+}

@@ -1,49 +1,55 @@
 import utils from './utils';
-import ProductModel from './product-model';
+import data from './../../data/data.json';
 
 class ProductCollection {
   constructor(products) {
-    this.models = products.map(product => new ProductModel(product));
+    this.products = products || data.products;
   }
 
-  valuesFor(key) {
-    return utils.array.unique(utils.array.flatten(this.models.map(model => {
-      return model.attributes[key];
-    })));
+  authors () {
+    return utils.array.uniq(this.products.reduce((acc, p) => {
+      acc = acc.concat(p.authors);
+
+      return acc;
+    }, []));
   }
 
-  filterBy(filters) {
-    let matches = this.models;
+  categories () {
+    return utils.array.uniq(this.products.reduce((acc, p) => {
+      acc = acc.concat(p.categories);
 
-    if (filters.inStock) {
-      matches = matches.filter(model => model.inStock());
-    }
+      return acc;
+    }, []));
+  }
 
-    if (filters.category.size) {
-      matches = matches.filter(model => {
-        return [...filters.category].some(category => {
-          return model.hasAttribute('category', category);
-        });
+  filterBy (attribute, value, products=this.products) {
+    function filterByAttributeValue (v) {
+      return products.filter(p => {
+        return Array.isArray(p[attribute])
+          ? utils.array.includes(p[attribute], v)
+          : p[attribute] === v;
       });
     }
 
-    if (filters.author.size) {
-      matches = matches.filter(model => {
-        return [...filters.author].some(author => {
-          return model.hasAttribute('author', author);
-        });
-      });
+    return Array.isArray(value)
+      ? utils.array.uniq(utils.array.collect(value, filterByAttributeValue))
+      : filterByAttributeValue(value);
+  }
+
+  filter(filters) {
+    let matches = this.products;
+
+    if (filters.authors.length) {
+      matches = this.filterBy('authors', filters.authors, matches)
+    }
+
+    if (filters.categories.length) {
+      console.log(matches);
+      matches = this.filterBy('categories', filters.categories, matches);
+      console.log(matches);
     }
 
     return matches;
-  }
-
-  filterByKeyValue(key, value, models) {
-    models = models || this.models;
-
-    return models.filter(model => {
-      return model.hasKeyValue(key, value);
-    });
   }
 }
 

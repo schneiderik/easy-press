@@ -22,7 +22,7 @@
       		<nav class="main-header__navigation">
       			<a href="/" class="main-header__link active">Products</a>
       			<a href="/about" class="main-header__link ">About</a>
-      			<!-- <span id="cart-link" class="main-header__link"></span> -->
+      			<span id="cart-link" class="main-header__link "></span>
       		</nav>
       	</div>
       </header>
@@ -35,40 +35,43 @@
         			<p class="product-page__author">Erik Schneider Gutierrez</p>
         			<p class="product-page__description">An organized vigilante uses his skills in project managment to out-plan a criminal.</p>
         			<p class="product-page__details">28 pgs. Blue and black ink on French Paper 80#C Construction Whitewash and one color black Risograph interiors on French Paper 50#T Dur-O-Tone Newspaper White. Edition of 80.</p>
+        			<div id="add-to-cart-link" data-slug="to-do"></div>
         		</div>
           </div>
 
-        	<div class="product-page__slideshow slideshow">
-        		<input type="radio" name="slide" id="slideshow__item--default" checked="checked" class="slideshow__item-input" />
-        		<div class="slideshow__item">
-        				<label for="slideshow__item--0">
-        					<img class="slideshow__image" src="/images/to-do/cover.png" />
-        				</label>
+        	<div class="product-page__slideshow">
+            <div class="slideshow">
+                <input type="radio" name="slide" checked="checked" id="slideshow__item--0" class="slideshow__item-input" />
+                <div class="slideshow__item">
+                    <label for="slideshow__item--1">
+                      <img class="slideshow__image" src="/images/to-do/cover.png" />
+                    </label>
 
-        				<label for="slideshow__item--1" class="slideshow__previous">←</label>
-        				<label for="slideshow__item--0" class="slideshow__next">→</label>
-        		</div>
+                      <label for="slideshow__item--2" class="slideshow__previous">←</label>
 
-        			<input type="radio" name="slide" id="slideshow__item--0" class="slideshow__item-input" />
-        			<div class="slideshow__item">
-        					<label for="slideshow__item--1">
-        						<img class="slideshow__image" src="/images/to-do/detail1.png" />
-        					</label>
+                    <label for="slideshow__item--1" class="slideshow__next">→</label>
+                </div>
+                <input type="radio" name="slide"  id="slideshow__item--1" class="slideshow__item-input" />
+                <div class="slideshow__item">
+                    <label for="slideshow__item--2">
+                      <img class="slideshow__image" src="/images/to-do/detail1.png" />
+                    </label>
 
-        					<label for="slideshow__item--default" class="slideshow__previous">←</label>
+                    <label for="slideshow__item--0" class="slideshow__previous">←</label>
 
-        					<label for="slideshow__item--1" class="slideshow__next">→</label>
-        			</div>
-        			<input type="radio" name="slide" id="slideshow__item--1" class="slideshow__item-input" />
-        			<div class="slideshow__item">
-        					<label for="slideshow__item--default">
-        						<img class="slideshow__image" src="/images/to-do/detail2.png" />
-        					</label>
+                    <label for="slideshow__item--2" class="slideshow__next">→</label>
+                </div>
+                <input type="radio" name="slide"  id="slideshow__item--2" class="slideshow__item-input" />
+                <div class="slideshow__item">
+                    <label for="slideshow__item--0">
+                      <img class="slideshow__image" src="/images/to-do/detail2.png" />
+                    </label>
 
-        					<label for="slideshow__item--0" class="slideshow__previous">←</label>
+                    <label for="slideshow__item--1" class="slideshow__previous">←</label>
 
-        					<label for="slideshow__item--default" class="slideshow__next">→</label>
-        			</div>
+                      <label for="slideshow__item--0" class="slideshow__next">→</label>
+                </div>
+            </div>
           </div>
         </div>
       </section>

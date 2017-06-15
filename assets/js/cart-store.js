@@ -3,8 +3,12 @@ const DEFAULT_STORE = {};
 
 let store, onSet;
 
-function get () {
-  return store;
+function get (key) {
+  if (key) {
+    return store[key];
+  } else {
+    return store;
+  }
 }
 
 function set (obj) {
@@ -22,15 +26,19 @@ function clear () {
 
 function clean () {
   Object.keys(store).forEach(key => {
-    if (store[key] === 0) {
-      removeItem(key);
+    if (store[key].quantity === 0) {
+      remove(key);
     }
   });
 }
 
-function add (key) {
+function add (key, unitPrice, shippingCost) {
   if (typeof store[key] === 'undefined') {
-    store[key] = 1;
+    store[key] = {
+      quantity: 1,
+      shippingCost: shippingCost,
+      unitPrice: unitPrice
+    };
   }
 
   set(store);
@@ -48,15 +56,15 @@ function increaseQuantity (key) {
   if (typeof store[key] === 'undefined') {
     add(key) 
   } else {
-    store[key]++;
+    store[key].quantity++;
 
     set(store);
   }
 }
 
 function decreaseQuantity (key) {
-  if (store[key] && store[key] > 0) {
-    store[key]--;
+  if (store[key] && store[key].quantity > 0) {
+    store[key].quantity--;
   }
 
   set(store);
@@ -64,7 +72,7 @@ function decreaseQuantity (key) {
 
 function setQuantity (key, quantity) {
   if (quantity >= 0) {
-    store[key] = quantity;
+    store[key].quantity = quantity;
   }
 
   set(store);
@@ -72,8 +80,22 @@ function setQuantity (key, quantity) {
 
 function totalQuantity () {
   return Object.keys(store).reduce((acc, key) => {
-    return acc + store[key];
+    return acc + store[key].quantity;
   }, 0)
+}
+
+function shippingCost () {
+  return Object.keys(store).reduce((acc, key) => {
+    return Math.max(acc, store[key].shippingCost);
+  }, 0)
+}
+
+function totalPrice () {
+  return Object.keys(store).reduce((acc, key) => {
+    acc = acc + (store[key].unitPrice * store[key].quantity);
+
+    return acc;
+  }, 0) + shippingCost();
 }
 
 export default {
@@ -88,12 +110,14 @@ export default {
 
     onSet = callback;
   },
-  get: get,
-  clear: clear,
-  add: add,
-  remove: remove,
-  increaseQuantity: increaseQuantity,
-  decreaseQuantity: decreaseQuantity,
-  setQuantity: setQuantity,
-  totalQuantity: totalQuantity
+  get,
+  clear,
+  add,
+  remove,
+  increaseQuantity,
+  decreaseQuantity,
+  setQuantity,
+  totalQuantity,
+  shippingCost,
+  totalPrice
 };

@@ -18,7 +18,7 @@ function CartItemListing () {
             authors={product.authors}
             imageSrc={product.images[0]}
             unitPrice={product.unitPrice}
-            quantity={cartStore.get()[product.slug]}
+            quantity={cartStore.get(product.slug).quantity}
           />
         })}
       </div>

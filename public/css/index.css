@@ -53,6 +53,9 @@ img {
   max-width: 40.45rem;
   margin-left: auto;
   margin-right: auto; }
+  .about .about__title {
+    font-size: 24px;
+    margin-bottom: 1.618rem; }
 
 .main-header {
   height: 4.854rem;

@@ -1,4 +1,4 @@
-var products = require('../data/data.json').products;
+var products = require('../data/products.json');
 var Taft = require('taft');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
@@ -18,15 +18,14 @@ products.forEach(function (product) {
       defaultLayout: 'layout',
       partials: './assets/html/partials/**/*',
       data: product,
-      helpers: './lib/handlebars-helpers.js',
+      helpers: './../lib/handlebars-helpers.js',
   };
 
   var taft = new Taft(options);
 
   var result = taft.build('./assets/html/product.hbs');
 
-
-  writeFile('./public/product/' + product.slug + '.html', result._content, function(err) {
+  writeFile('./public/product/' + product.id + '.html', result._content, function(err) {
     if(err) {
         return console.log(err);
     }

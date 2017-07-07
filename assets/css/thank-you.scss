@@ -1,0 +1,28 @@
+.thank-you {
+  max-width: lh(25);
+  margin-left: auto;
+  margin-right: auto;
+
+  .thank-you__title {
+    font-size: 24px;
+    margin-bottom: lh(1);
+  }
+
+  .thank-you__smile {
+    display: flex;
+    background-color: $yellow;
+    color: $black;
+    box-sizing: content-box;
+    width: lh(3);
+    height: lh(2.6);
+    padding-bottom: lh(0.4);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    -webkit-backface-visibility: hidden;
+    font-size: 50px;
+    font-weight: 800;
+    transform: rotate(80deg);
+    margin-bottom: lh(1);
+  }
+}

@@ -1,4 +1,5 @@
 @mixin button {
+  display: inline-block;
   height: lh(1.5);
   line-height: lh(1);
   padding-top: lh(0.25);

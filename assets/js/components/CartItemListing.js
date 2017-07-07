@@ -1,31 +1,28 @@
 import React from 'react';
 import cartStore from './../cart-store';
-import { products } from './../../../data/data.json';
+import productCollection from './../product-collection';
+import utils from './../utils';
 import CartItem from './CartItem';
 
 function CartItemListing () {
-  let keys = Object.keys(cartStore.get());
-
-  if (keys.length) {
+  if (utils.cart.quantity(cartStore.get()) > 0) {
     return (
       <div className="cart-item-listing">
-        {keys.map(key => {
-          let product = products.find(p => p.slug === key);
-
+        {productCollection.get(Object.keys(cartStore.get())).map(model => {
           return <CartItem
-            slug={product.slug}
-            name={product.name}
-            authors={product.authors}
-            imageSrc={product.images[0]}
-            unitPrice={product.unitPrice}
-            quantity={cartStore.get(product.slug).quantity}
+            id={model.get('id')}
+            name={model.get('name')}
+            authors={model.get('authors')}
+            imageSrc={model.get('images')[0]}
+            unitPrice={model.get('unitPrice')}
+            quantity={cartStore.get(model.get('id'))}
           />
         })}
       </div>
     );
   } else {
     return (
-      <div className="cart-item-listing--empty">Your cart is empty.</div>
+      <div className="cart-item-listing cart-item-listing--empty">Your cart is empty.</div>
     )
   }
 }

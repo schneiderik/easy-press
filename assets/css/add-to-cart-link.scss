@@ -1,3 +1,16 @@
 .add-to-cart-link {
   @include button;
+
+  margin-bottom: lh(0.5);
+
+  &.add-to-cart-link--disabled {
+    background-color: $grey;
+    cursor: default;
+
+    &:hover,
+    &:active {
+      background-color: $grey;
+      box-shadow: initial;
+    }
+  }
 }

@@ -1,15 +1,10 @@
-import intersection from 'lodash.intersection';
-
 export default {
   integer: {
     toUSD: function (i) {
-      i = (i/100).toFixed(2);
-
-      return `$${i}`;
+      return (i/100).toFixed(2);
     }
   },
   array: {
-    intersection: intersection,
     uniq: function (ary) {
       let s = new Set(ary);
 

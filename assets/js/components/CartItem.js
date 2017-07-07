@@ -15,9 +15,9 @@ function CartItem (props) {
       </div>
       <div className="cart-item__controls">
         <div className="cart-item__unit-price">{utils.integer.toUSD(props.unitPrice)} &times;</div>
-        <a className="cart-item__remove-control" href="#" onClick={cartStore.decreaseQuantity.bind(cartStore, props.slug)}>–</a>
+        <a className="cart-item__remove-control" onClick={cartStore.decrement.bind(cartStore, props.id)}>–</a>
         <div className="cart-item__amount">{props.quantity}</div>
-        <a className="cart-item__add-control" href="#" onClick={cartStore.increaseQuantity.bind(cartStore, props.slug)}>+</a>
+        <a className="cart-item__add-control" onClick={cartStore.increment.bind(cartStore, props.id)}>+</a>
       </div>
       <div className="cart-item__pricing">
         <div className="cart-item__price">{utils.integer.toUSD(props.unitPrice * props.quantity)}</div>

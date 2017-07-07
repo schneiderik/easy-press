@@ -4,12 +4,13 @@ import ProductListItem from './ProductListItem';
 function ProductListing (props) {
   return (
     <div className="product-listing">
-      {props.products.map(product =>
+      {props.models.map(model =>
         <ProductListItem
-          slug={product.slug}
-          title={product.name}
-          authors={product.authors}
-          imageSrc={product.images[0]}
+          id={model.get('id')}
+          name={model.get('name')}
+          authors={model.get('authors')}
+          imageSrc={model.get('images')[0]}
+          quantity={model.get('quantity')}
         />
       )}
     </div>

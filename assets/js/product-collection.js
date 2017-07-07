@@ -1,33 +1,48 @@
+import products from './../../data/products.json';
 import utils from './utils';
-import data from './../../data/data.json';
+import ProductModel from './product-model';
 
 class ProductCollection {
-  constructor(products) {
-    this.products = products || data.products;
+  constructor () {
+    this.models = products.map(attributes => new ProductModel(attributes));
+  }
+
+  get (id) {
+    if (typeof id === 'string') {
+      return this.models.find(m => m.get('id') === id);
+    } else if (Array.isArray(id)) {
+      return this.models.reduce((acc, m) => {
+        if (id.indexOf(m.get('id')) !== -1) {
+          acc.push(m);
+        }
+
+        return acc;
+      }, []);
+    }
   }
 
   authors () {
-    return utils.array.uniq(this.products.reduce((acc, p) => {
-      acc = acc.concat(p.authors);
+    return utils.array.uniq(this.models.reduce((acc, model) => {
+      acc = acc.concat(model.get('authors'));
 
       return acc;
     }, []));
   }
 
   categories () {
-    return utils.array.uniq(this.products.reduce((acc, p) => {
-      acc = acc.concat(p.categories);
+    return utils.array.uniq(this.models.reduce((acc, model) => {
+      acc = acc.concat(model.get('categories'));
 
       return acc;
     }, []));
   }
 
-  filterBy (attribute, value, products=this.products) {
+  filterBy (attribute, value, models=this.models) {
     function filterByAttributeValue (v) {
-      return products.filter(p => {
-        return Array.isArray(p[attribute])
-          ? utils.array.includes(p[attribute], v)
-          : p[attribute] === v;
+      return models.filter(model => {
+        return Array.isArray(model.get(attribute))
+          ? utils.array.includes(model.get(attribute), v)
+          : model.get(attribute) === v;
       });
     }
 
@@ -36,20 +51,26 @@ class ProductCollection {
       : filterByAttributeValue(value);
   }
 
-  filter(filters) {
-    let matches = this.products;
+  filter (filters) {
+    let matches = this.models;
 
     if (filters.authors.length) {
       matches = this.filterBy('authors', filters.authors, matches)
     }
 
     if (filters.categories.length) {
-      console.log(matches);
       matches = this.filterBy('categories', filters.categories, matches);
-      console.log(matches);
     }
 
     return matches;
+  }
+
+  updateQuantities (quantities) {
+    this.models.forEach(model => {
+      const quantity = parseInt(quantities[model.get('id')]);
+
+      model.set('quantity', quantity);
+    });
   }
 }
 

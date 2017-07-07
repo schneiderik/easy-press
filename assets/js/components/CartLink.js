@@ -1,14 +1,12 @@
 import React from 'react';
-import cartStore from './../cart-store';
+import appState from './../app-state';
 
 function CartLink () {
-  const quantity = cartStore.totalQuantity();
-
   return (
     <a className="cart-link" href={'/cart'}>
       Cart
-      {quantity > 0 &&
-        <span className="cart-link__count">{quantity}</span>
+      {appState.cartItemCollection.quantity() > 0 &&
+        <span className="cart-link__count">{appState.cartItemCollection.quantity()}</span>
       }
     </a>
   );

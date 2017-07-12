@@ -37,7 +37,7 @@ app.get('/product/:id', function (req, res) {
 
 app.get('/stock', function (req, res) {
   client.hgetall('stock', function (err, reply) {
-    let stock = err ? {} : reply;
+    var stock = err ? {} : reply;
 
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(stock));
@@ -46,7 +46,7 @@ app.get('/stock', function (req, res) {
 
 app.get('/stock/:id', function (req, res) {
   client.hget('stock', req.params.id, function (err, reply) {
-    let quantity = err ? '0' : reply;
+    var quantity = err ? '0' : reply;
 
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(quantity));

@@ -1,13 +1,20 @@
 import CartItemModel from './cart-item-model';
 import cartStore from './cart-store';
+import utils from './utils';
 
 class CartItemCollection {
-  constructor () {
-    this.models = Object.keys(cartStore.get()).map(id => {
-      return new CartItemModel({
-        id: id,
-        quantity: parseInt(cartStore.get(id))
-      });
+  constructor (options={}) {
+    this.models = [];
+
+    this.onUpdate = options.onUpdate
+      ? () => {
+        cartStore.set(this.collect('quantity'));
+        options.onUpdate();
+      }
+      : utils.func.noop;
+
+    Object.keys(cartStore.get()).map(id => {
+      this.push({id, quantity: parseInt(cartStore.get(id))}, true)
     });
   }
 
@@ -25,19 +32,53 @@ class CartItemCollection {
     }
   }
 
+  push ({id, quantity}, silent) {
+    this.models.push(new CartItemModel({id, quantity}, {
+      onChange: this.onUpdate.bind(this)
+    }));
+
+    if (!silent) this.onUpdate();
+  }
+
+  add ({id, quantity}, silent) {
+    if (this.get(id)) {
+      this.get(id).increment();
+    } else {
+      this.push({id, quantity}, silent);
+    }
+  }
+
+  clear () {
+    this.models = [];
+
+    this.onUpdate();
+  }
+
+  remove (id) {
+    const model = this.get(id);
+
+    this.models.splice(this.models.indexOf(model), 1);
+
+    this.onUpdate();
+  }
+
   quantity () {
     return this.models.reduce((acc, m) => acc + m.get('quantity'), 0);
   }
 
   shippingCost () {
     return this.models.reduce((acc, m) => {
-      return Math.max(acc, m.get('productModel').get('shippingCost'));
+      if (m.get('quantity') > 0) {
+        return Math.max(acc, m.get('productModel').get('shippingCost'));
+      } else {
+        return acc;
+      }
     }, 0);
   }
 
   subtotal () {
     return this.models.reduce((acc, m) => {
-      return acc + (model.get('productModel').get('unitPrice') * model.get('quantity'));
+      return acc + (m.get('productModel').get('unitPrice') * m.get('quantity'));
     }, 0);
   }
 
@@ -45,9 +86,9 @@ class CartItemCollection {
     return this.shippingCost() + this.subtotal();
   }
 
-  toJSON () {
+  collect (attr) {
     return this.models.reduce((acc, m) => {
-      acc[m.get('id')] = m.get('quantity');
+      acc[m.get('id')] = m.get(attr);
       
       return acc;
     }, {});
@@ -56,14 +97,6 @@ class CartItemCollection {
   toPayPalItems () {
     return this.models.map(m => {
       return m.toPayPalItem();
-    });
-  }
-
-  updateQuantities (quantities) {
-    this.models.forEach(model => {
-      const quantity = parseInt(quantities[model.get('id')]);
-      
-      model.set('quantity', Math.min(model.get('quantity'), quantity))
     });
   }
 }

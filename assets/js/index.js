@@ -1,12 +1,12 @@
 import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import quantityStore from './quantity-store';
-import cartStore from './cart-store';
 import ProductBrowser from './components/ProductBrowser';
 import CartLink from './components/CartLink';
 import AddToCart from './components/AddToCart';
 import Cart from './components/Cart';
+import ProductCollection from './product-collection';
+import CartItemCollection from './cart-item-collection';
 import appState from './app-state';
 
 const productBrowserContainer = document.getElementById('product-browser');
@@ -48,16 +48,17 @@ function renderCartComponents () {
   renderCart();
 }
 
-quantityStore.get((err, quantities) => {
-  if (err) {
-    console.error(err);
-
-    return;
-  }
-
-  appState.productCollection.updateQuantities(quantities);
-  appState.cartItemCollection.updateQuantities(quantities);
-    
+function renderApp () {
   renderProductBrowser();
   renderCartComponents();
-})
+}
+
+appState.set('productCollection', new ProductCollection({
+  onUpdate: renderApp
+}));
+
+appState.set('cartItemCollection', new CartItemCollection({
+  onUpdate: renderApp
+}));
+
+renderApp();

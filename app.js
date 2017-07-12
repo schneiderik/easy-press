@@ -57,7 +57,7 @@ app.post('/stock', function (req, res) {
   client.hmset('stock', req.body);
 
   res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify(updates));
+  res.send({success: true});
 });
 
 app.listen(process.env.PORT || 3000);

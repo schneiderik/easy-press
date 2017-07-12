@@ -1,12 +1,14 @@
 import appState from './app-state';
+import utils from './utils';
 
 class ProductModel {
-  constructor (attributes) {
+  constructor (attributes, options={}) {
     this.attributes = attributes;
+    this.onChange = options.onChange || utils.func.noop;
 
     Object.defineProperty(this.attributes, 'cartItemModel', {
       get: () => {
-        return appState.cartItemCollection.get(this.attributes.id)
+        return appState.get('cartItemCollection').get(this.attributes.id)
       }
     });
 
@@ -17,6 +19,23 @@ class ProductModel {
         return this.get('quantity') - quantityInCart;
       }
     });
+
+    Object.defineProperty(this.attributes, 'quantity', {
+      enumerable: true,
+      writeable: true,
+      get: () => {
+        return this.quantity;
+      },
+      set: (value) => {
+        const cartItemModel = this.get('cartItemModel');
+
+        if (cartItemModel) {
+          cartItemModel.set('quantity', Math.min(cartItemModel.get('quantity'), value));
+        }
+
+        this.quantity = value;
+      }
+    });
   }
 
   get (key) {
@@ -25,6 +44,8 @@ class ProductModel {
 
   set (key, value) {
     this.attributes[key] = value;
+
+    this.onChange();
   }
 }
 

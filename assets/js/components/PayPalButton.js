@@ -4,6 +4,9 @@ import appState from './../app-state';
 
 class PayPalButton extends React.Component {
   componentDidMount () {
+    const cartItemCollection = appState.get('cartItemCollection');
+    const productCollection = appState.get('productCollection');
+
     paypal.Button.render({
       env: window.location.hostname === 'really-easy-press.com' ? 'production' : 'sandbox',
       client: {
@@ -16,15 +19,15 @@ class PayPalButton extends React.Component {
           transactions: [
             {
               amount: {
-                total: utils.integer.toUSD(appState.cartItemCollection.totalPrice()),
+                total: utils.integer.toUSD(cartItemCollection.totalPrice()),
                 currency: 'USD',
                 details: {
-                  "subtotal": utils.integer.toUSD(appState.cartItemCollection.subTotal()),
-                  "shipping": utils.integer.toUSD(appState.cartItemCollection.shippingCost())
+                  "subtotal": utils.integer.toUSD(cartItemCollection.subtotal()),
+                  "shipping": utils.integer.toUSD(cartItemCollection.shippingCost())
                 }
               },
               item_list: {
-                items: appState.cartItemCollection.toPayPalItems()
+                items: cartItemCollection.toPayPalItems()
               }
             }
           ]
@@ -32,12 +35,12 @@ class PayPalButton extends React.Component {
       },
       onAuthorize: function(data, actions) {
         return actions.payment.execute().then(function(payment) {
-          appState.productCollection.update(appState.cartItemCollection.toJSON(), function (err, json) {
+          productCollection.updateQuantities(function (err, json) {
             if (err) {
               return;
             }
 
-            appState.cartItemCollection.clear();
+            cartItemCollection.clear();
             window.location = "/thank-you"
           })
         });

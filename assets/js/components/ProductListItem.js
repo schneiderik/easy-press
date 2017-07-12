@@ -25,7 +25,7 @@ function Product (props) {
           <div className="product-list-item__status" style={getStyle()}>Out of Stock <span>:(</span></div>
         )}
       </div>
-      <h1 className="product-list-item__title">{props.title}</h1>
+      <h1 className="product-list-item__title">{props.name}</h1>
       <p className="product-list-item__author">{helpers.formatAuthors(props.authors)}</p>
     </a>
   );

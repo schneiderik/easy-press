@@ -1,14 +1,18 @@
 .cart-item {
   margin-bottom: lh(0.5);
   padding-bottom: lh(0.5);
-  display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid $grey-light;
 
+	@media (min-width: $mq-small) {
+    display: flex;
+  }
+
   .cart-item__details {
     flex: 1;
+    width: 100%;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -23,6 +27,26 @@
 
     .cart-item__author {
       margin: 0;
+    }
+
+    .cart-item__remove {
+      color: $blue;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .cart-item__controls-container {
+    width: 100%;
+    flex: 0 0 280px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: lh(1);
+
+    @media (min-width: $mq-small) {
+      margin-top: 0;
     }
   }
 

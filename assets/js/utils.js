@@ -4,6 +4,11 @@ export default {
       return (i/100).toFixed(2);
     }
   },
+  func: {
+    noop: function () {
+      return;
+    }
+  },
   array: {
     uniq: function (ary) {
       let s = new Set(ary);

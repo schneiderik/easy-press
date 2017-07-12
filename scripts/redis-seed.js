@@ -11,6 +11,11 @@ client.del('stock', function () {
   client.hmset('stock', availability);
 
   client.hgetall('stock', function (err, reply) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+
     console.log(reply);
 
     console.log('COMPLETE!');

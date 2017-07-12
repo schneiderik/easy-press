@@ -4,12 +4,13 @@ import AddToCartLink from './AddToCartLink';
 import ProductAvailability from './ProductAvailability';
 
 function AddToCart (props) {
-  const productModel = appState.productCollection.get(props.productId);
+  const productModel = appState.get('productCollection').get(props.productId);
 
   return (
     <div>
       <AddToCartLink productModel={productModel} />
-      <ProductAvailability availability={productModel.eligibleQuantity()} />
+      {Boolean(productModel.get('eligibleQuantity')) &&
+        <ProductAvailability availability={productModel.get('eligibleQuantity')} />}
     </div>
   );
 }

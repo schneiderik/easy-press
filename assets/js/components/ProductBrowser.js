@@ -1,16 +1,18 @@
 import React from 'react';
+import appState from './../app-state';
 import ProductFilters from './ProductFilters';
 import ProductListing from './ProductListing';
-import productCollection from './../product-collection';
 
 class ProductBrowser extends React.Component {
   constructor(props) {
     super(props);
 
+    this.productCollection = appState.get('productCollection');
+
     this.handleFilterChange = this.handleFilterChange.bind(this);
 
 		this.state = {
-      filteredModels: productCollection.models,
+      filteredModels: this.productCollection.models,
       filters: {
         inStock: null,
         categories: [],
@@ -22,7 +24,7 @@ class ProductBrowser extends React.Component {
   handleFilterChange(filters) {
     this.setState({
       filters: filters,
-      filteredModels: productCollection.filter(filters)
+      filteredModels: this.productCollection.filter(filters)
     });
   }
 
@@ -31,8 +33,8 @@ class ProductBrowser extends React.Component {
       <div className="product-browser">
         <ProductFilters
           filters={this.state.filters}
-          authors={productCollection.authors()}
-          categories={productCollection.categories()}
+          authors={this.productCollection.authors()}
+          categories={this.productCollection.categories()}
           onChange={this.handleFilterChange}
         />
 

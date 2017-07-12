@@ -1,10 +1,25 @@
 import products from './../../data/products.json';
+import quantityStore from './quantity-store';
 import utils from './utils';
 import ProductModel from './product-model';
 
 class ProductCollection {
-  constructor () {
-    this.models = products.map(attributes => new ProductModel(attributes));
+  constructor (options={}) {
+    this.onUpdate = options.onUpdate || utils.func.noop;
+
+    this.models = products.map(attributes => {
+      return new ProductModel(attributes, {
+        onChange: this.onUpdate.bind(this)
+      })
+    });
+
+    quantityStore.get((err, quantities) => {
+      if (err) return;
+
+      Object.keys(quantities).forEach(id => {
+        this.get(id).set('quantity', parseInt(quantities[id]));
+      });
+    });
   }
 
   get (id) {
@@ -65,12 +80,16 @@ class ProductCollection {
     return matches;
   }
 
-  updateQuantities (quantities) {
-    this.models.forEach(model => {
-      const quantity = parseInt(quantities[model.get('id')]);
+  collect (attr) {
+    return this.models.reduce((acc, model) => {
+      acc[model.get('id')] = model.get(attr);
 
-      model.set('quantity', quantity);
-    });
+      return acc;
+    }, {});
+  }
+
+  updateQuantities (callback) {
+    quantityStore.set(this.collect('eligibleQuantity'), callback);
   }
 }
 

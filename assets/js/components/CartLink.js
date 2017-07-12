@@ -2,11 +2,13 @@ import React from 'react';
 import appState from './../app-state';
 
 function CartLink () {
+  const quantity = appState.get('cartItemCollection').quantity();
+
   return (
     <a className="cart-link" href={'/cart'}>
       Cart
-      {appState.cartItemCollection.quantity() > 0 &&
-        <span className="cart-link__count">{appState.cartItemCollection.quantity()}</span>
+      {quantity > 0 &&
+        <span className="cart-link__count">{quantity}</span>
       }
     </a>
   );

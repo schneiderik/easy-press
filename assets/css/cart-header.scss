@@ -9,4 +9,10 @@
   .cart-header__title {
     font-size: 24px;
   }
+
+  .cart-header__action {
+    color: $blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
